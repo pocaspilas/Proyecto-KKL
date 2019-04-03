@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddafa7250695cac44bfe3d11e897647f, type: 3}
+  m_Name: DefaultIconsDb
+  m_EditorClassIdentifier: 
+  database:
+  - guid: d7f4b9f1a2280144e95738b810337629
+    icon: {fileID: 2800000, guid: beface08850902642a69784645435972, type: 3}
+    icon_16: {fileID: 2800000, guid: c73950005190ec94f8c44c60f103b833, type: 3}
+    assetName: Mati36
+  - guid: 8b043594aa1ae62488d5c07eea5b0869
+    icon: {fileID: 2800000, guid: 562c7380e4e37dc4da25e16252998bdb, type: 3}
+    icon_16: {fileID: 2800000, guid: e69511a63603e0d4aab5707237ba4fce, type: 3}
+    assetName: Scripts
+  - guid: 479068f1c8e98434185769df4787d986
+    icon: {fileID: 2800000, guid: 38020f7ed1dfcb54bbc06bb91ee69ec0, type: 3}
+    icon_16: {fileID: 2800000, guid: 04df5bb66f1177d4099c9bc9378bc6ed, type: 3}
+    assetName: Prefabs
+  - guid: 706c407943e9db3478862789804a4e97
+    icon: {fileID: 2800000, guid: 5129f99b9b10a224d92af5308d4390ab, type: 3}
+    icon_16: {fileID: 2800000, guid: c587c0f715a1c574f935dc32a2473594, type: 3}
+    assetName: Data
+  defaultIcon: {fileID: 0}
