@@ -83,9 +83,12 @@ public class PlayerController : MonoBehaviour
     {
         Debug.DrawRay(transform.position, transform.forward * 5f, Color.green);
 
-        transform.position = Vector3.Lerp(GetWaypoint(currentWaypoint), GetWaypoint(currentWaypoint + 1), t);
+        Vector3 current = GetWaypoint(currentWaypoint);
+        Vector3 next = GetWaypoint(currentWaypoint + 1);
+
+        transform.position = Vector3.Lerp(current, next, t);
         transform.forward = Vector3.Slerp(lastForward, nextForward, t);
-        t += Time.deltaTime * speed;
+        t += Time.deltaTime * speed / Vector3.Distance(current, next);
 
         if (t > 1)
         {
