@@ -34,13 +34,13 @@ Shader "Hidden/Mati36/LeavesBillboard" {
 		fixed _Cutoff;
 
 		//uniform fixed _BillboardMult;
-		uniform fixed4 _BillboardTint;
+		//uniform fixed4 _BillboardTint;
 
 	fixed4 frag(v2f input) : SV_Target
 	{
 		fixed4 col = tex2D(_MainTex, input.uv.xy);
 		//col.rgb *= input.color.rgb;
-		col.rgb *= _BillboardTint.rgb;
+		//col.rgb *= _BillboardTint.rgb;
 		//col.rgb *= _BillboardMult;
 		clip(col.a - _Cutoff);
 		col.a = 1;

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class BillboardConfig : MonoBehaviour
 {
-    public Color billboardTint;
+    //public Color billboardTint;
 
-    private void OnValidate()
-    {
-        Shader.SetGlobalColor("_BillboardTint", billboardTint);
-    }
+    //private void OnValidate()
+    //{
+    //    Shader.SetGlobalColor("_BillboardTint", billboardTint);
+    //}
 }

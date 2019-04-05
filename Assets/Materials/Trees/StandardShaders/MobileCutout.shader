@@ -14,7 +14,7 @@ Shader "Mati36/Mobile/Cutout" {
 		LOD 150
 
 		CGPROGRAM
-#pragma surface surf Lambert noforwardadd
+		#pragma surface surf Lambert noforwardadd
 
 		sampler2D _MainTex;
 		fixed _CutoutThreshold;
