@@ -1,102 +1,27 @@
 fileFormatVersion: 2
-
-guid: ade761126a1117b4e9902108885eae31
-
+guid: d61b43ecf43894042a0f33d74059d61a
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Arms/Leg Line
-    100002: Axle Holder 01
-    100004: Axle Holder 02
-    100006: Brace 01
-    100008: Brace 02
-    100010: Brace Line
-    100012: //RootNode
-    100014: Cylinder001
-    100016: Cylinder002
-    100018: Cylinder003
-    100020: Hub 02
-    100022: Left Handle002
-    100024: Left Handle01
-    100026: nueva
-    100028: Nut 01
-    100030: Nut 02
-    100032: Spokes 02
-    100034: Tire
-    400000: Arms/Leg Line
-    400002: Axle Holder 01
-    400004: Axle Holder 02
-    400006: Brace 01
-    400008: Brace 02
-    400010: Brace Line
-    400012: //RootNode
-    400014: Cylinder001
-    400016: Cylinder002
-    400018: Cylinder003
-    400020: Hub 02
-    400022: Left Handle002
-    400024: Left Handle01
-    400026: nueva
-    400028: Nut 01
-    400030: Nut 02
-    400032: Spokes 02
-    400034: Tire
-    2100000: cuerpo carretilla
-    2100002: metal carretilla
-    2100004: goma carretilla
-    2100006: rayos carretilla
-    2100008: centro ruedacarretilla
-    2300000: Arms/Leg Line
-    2300002: Axle Holder 01
-    2300004: Axle Holder 02
-    2300006: Brace 01
-    2300008: Brace 02
-    2300010: Brace Line
-    2300012: Cylinder001
-    2300014: Cylinder002
-    2300016: Cylinder003
-    2300018: Hub 02
-    2300020: Left Handle002
-    2300022: Left Handle01
-    2300024: nueva
-    2300026: Nut 01
-    2300028: Nut 02
-    2300030: Spokes 02
-    2300032: Tire
-    3300000: Arms/Leg Line
-    3300002: Axle Holder 01
-    3300004: Axle Holder 02
-    3300006: Brace 01
-    3300008: Brace 02
-    3300010: Brace Line
-    3300012: Cylinder001
-    3300014: Cylinder002
-    3300016: Cylinder003
-    3300018: Hub 02
-    3300020: Left Handle002
-    3300022: Left Handle01
-    3300024: nueva
-    3300026: Nut 01
-    3300028: Nut 02
-    3300030: Spokes 02
-    3300032: Tire
-    4300000: nueva
-    4300002: Cylinder001
-    4300004: Left Handle01
-    4300006: Left Handle002
-    4300008: Brace Line
-    4300010: Cylinder002
-    4300012: Arms/Leg Line
-    4300014: Tire
-    4300016: Axle Holder 01
-    4300018: Axle Holder 02
-    4300020: Hub 02
-    4300022: Nut 02
-    4300024: Spokes 02
-    4300026: Nut 01
-    4300028: Brace 02
-    4300030: Brace 01
-    4300032: Cylinder003
+    100000: Box001
+    100002: Box002
+    100004: Box003
+    100006: //RootNode
+    400000: Box001
+    400002: Box002
+    400004: Box003
+    400006: //RootNode
+    2100000: cartel picnic
+    2100002: metal
+    2300000: Box001
+    2300002: Box002
+    2300004: Box003
+    3300000: Box001
+    3300002: Box002
+    3300004: Box003
+    4300000: Box001
+    4300002: Box003
+    4300004: Box002
   externalObjects: {}
   materials:
     importMaterials: 1
