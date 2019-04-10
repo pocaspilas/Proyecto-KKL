@@ -7,9 +7,6 @@ using Random = UnityEngine.Random;
 using System.IO;
 
 static public class FilesMgr  {
-
-    static string appName = "DefaultName";
-
     #region TXT FILE
 
     public static bool CheckFile(string filename, string extension)
@@ -88,16 +85,11 @@ static public class FilesMgr  {
         }
     }
     #endregion
-
-    //static string extPath; //Para cargar audios largos (canciones), imagenes
-    static string intPath; //Para datos de jugadores, preguntas, settings, etc
+    
+    static string intPath; 
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     public static void Initialize() {
-        //if (!Directory.Exists(Path.GetFullPath(Application.dataPath + "/../GameFiles")))
-        //    Directory.CreateDirectory(Path.GetFullPath(Application.dataPath + "/../GameFiles"));
-        //intPath = Path.GetFullPath(Application.dataPath + "/../GameFiles");
-        //extPath = "C:\\ExternalFiles";
         Debug.Log("--INITIALIZING FileMgr");
 
 #if UNITY_ANDROID && !UNITY_EDITOR

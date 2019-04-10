@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     static public bool isMoving;
     public float speed;
+
+    public int itemsCollected = 0;
     
 
     private void Awake()
@@ -99,5 +101,10 @@ public class PlayerController : MonoBehaviour
             if (currentWaypoint < WaypointsRoute.splinePoints.Count - 1)
                 nextForward = (GetWaypoint(currentWaypoint + 1) - GetWaypoint(currentWaypoint)).normalized;
         }
+    }
+
+    public void OnItemCollect()
+    {
+        itemsCollected++;
     }
 }
