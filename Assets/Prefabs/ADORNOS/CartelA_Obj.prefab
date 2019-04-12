@@ -197,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6688864037914133694}
   m_Layer: 0
-  m_Name: cartel_A_Obj
+  m_Name: CartelA_Obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -212,7 +212,7 @@ Transform:
   m_GameObject: {fileID: 7592950560544162777}
   m_LocalRotation: {x: -0.07773793, y: -0.70282066, z: -0.70282066, w: 0.07773793}
   m_LocalPosition: {x: 0, y: -9.56, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 2128867025569940092}
   m_Father: {fileID: 0}
