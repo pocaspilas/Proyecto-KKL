@@ -9,6 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9188898965303260542}
+  - component: {fileID: 2078589231}
+  - component: {fileID: 2078589233}
+  - component: {fileID: 2078589232}
+  - component: {fileID: 6875915958781673432}
   m_Layer: 0
   m_Name: Regadera_Obj
   m_TagString: Untagged
@@ -23,14 +27,72 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2706340343859208780}
-  m_LocalRotation: {x: -0, y: 0.64249915, z: -0, w: 0.7662864}
+  m_LocalRotation: {x: 0, y: 0.64250004, z: 0, w: 0.76628566}
   m_LocalPosition: {x: 253.70796, y: 1.686, z: 230.75075}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.9028, y: 1.9028, z: 1.9028}
   m_Children:
   - {fileID: 6206959355006308769}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 79.957, z: 0}
+--- !u!65 &2078589231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706340343859208780}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.80438226, y: 0.54418314, z: 0.6556656}
+  m_Center: {x: -0.09780876, y: 0.22790876, z: 0.0026919686}
+--- !u!114 &2078589233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706340343859208780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46602ab15b394cb4c86c9da12a55fee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usesGazeRing: 1
+--- !u!114 &2078589232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706340343859208780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0cd8d5b922c9a4a9e8d3e38c24e3f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMat: {fileID: 2100000, guid: bcb0bd67bdb4047438730d90e1a0840d, type: 2}
+--- !u!95 &6875915958781673432
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2706340343859208780}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ada7f6f456f1e74599b454944f98587, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6206959355006700321
 PrefabInstance:
   m_ObjectHideFlags: 0

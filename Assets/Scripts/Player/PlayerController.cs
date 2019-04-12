@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Gaze Slow")]
     public float gazeSlow = 1;
-    public float gazeTime;
+    public float gazeSlowTime;
+    public float gazeSpeedTime;
     private float timeGazing = 0;
 
     private void Awake()
@@ -76,9 +77,9 @@ public class PlayerController : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
 
         if (VRGaze.currentVRCamera.IsGazingSomething)
-            timeGazing += Time.deltaTime / gazeTime;
+            timeGazing += Time.deltaTime / gazeSlowTime;
         else
-            timeGazing -= Time.deltaTime / gazeTime;
+            timeGazing -= Time.deltaTime / gazeSpeedTime;
         timeGazing = Mathf.Clamp01(timeGazing);
     }
 
