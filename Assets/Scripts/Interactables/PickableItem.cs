@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mati36.VR;
 
 [SelectionBase]
 [RequireComponent(typeof(VRInteractableItem))]

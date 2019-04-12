@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6704564b9b34fc945a4bd9f6906d7b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turnSpeed: 1
 --- !u!4 &300812185
 Transform:
   m_ObjectHideFlags: 0
@@ -1432,6 +1433,8 @@ MonoBehaviour:
   eyeCamera: {fileID: 284649480}
   speed: 4
   itemsCollected: 3
+  gazeSlow: 4
+  gazeTime: 1
 --- !u!4 &1250284937
 Transform:
   m_ObjectHideFlags: 0
@@ -2801,11 +2804,6 @@ PrefabInstance:
     - target: {fileID: 4695527992431244, guid: 0e8f2e3255e2adb40bffd674252fae65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114486000609065290, guid: 0e8f2e3255e2adb40bffd674252fae65,
-        type: 3}
-      propertyPath: ringFillTime
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e8f2e3255e2adb40bffd674252fae65, type: 3}

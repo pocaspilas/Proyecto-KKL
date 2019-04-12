@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Mati36.VR;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,7 +16,12 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     public int itemsCollected = 0;
-    
+
+
+    [Header("Gaze Slow")]
+    public float gazeSlow = 1;
+    public float gazeTime;
+    private float timeGazing = 0;
 
     private void Awake()
     {
@@ -43,6 +49,7 @@ public class PlayerController : MonoBehaviour
         transform.forward = lastForward;
 
         isMoving = false;
+        timeGazing = 0;
         //StartCoroutine(DelayStart());
     }
 
@@ -67,6 +74,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+
+        if (VRGaze.currentVRCamera.IsGazingSomething)
+            timeGazing += Time.deltaTime / gazeTime;
+        else
+            timeGazing -= Time.deltaTime / gazeTime;
+        timeGazing = Mathf.Clamp01(timeGazing);
     }
 
     private void LateUpdate()
@@ -90,7 +103,7 @@ public class PlayerController : MonoBehaviour
 
         transform.position = Vector3.Lerp(current, next, t);
         transform.forward = Vector3.Slerp(lastForward, nextForward, t);
-        t += Time.deltaTime * speed / Vector3.Distance(current, next);
+        t += (Time.deltaTime * (speed - gazeSlow * timeGazing)) / Vector3.Distance(current, next);
 
         if (t > 1)
         {
