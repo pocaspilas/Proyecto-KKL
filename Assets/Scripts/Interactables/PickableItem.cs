@@ -14,12 +14,14 @@ public class PickableItem : MonoBehaviour
     Material sharedMat;
 
     public Material outlineMat;
+    private Material outlineMatInstance;
 
     private void Awake()
     {
         _interactable = GetComponent<VRInteractableItem>();
         _rend = GetComponentsInChildren<Renderer>();
         sharedMat = _rend[0].sharedMaterial;
+        
         ani = GetComponent<Animator>();
     }
 
@@ -39,8 +41,13 @@ public class PickableItem : MonoBehaviour
 
     private void Interactable_OnOver()
     {
+        if(outlineMatInstance == null)
+        {
+            outlineMatInstance = new Material(outlineMat);
+            outlineMatInstance.mainTexture = sharedMat.mainTexture;
+        }
         foreach (var r in _rend)
-            r.material = outlineMat;
+            r.material = outlineMatInstance;
     }
 
     private void Interactable_OnOut()
