@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Flag ISRAEL
-  m_Shader: {fileID: 4800000, guid: 36e2b3bbc6f03f742b47341c7da31c1c, type: 3}
+  m_Shader: {fileID: 4800000, guid: 97b1e7e4b99f1b948bd3c3fbc1b48ba8, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0

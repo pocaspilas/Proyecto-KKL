@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6400738202517692450}
+  - component: {fileID: 4958908787776341904}
+  - component: {fileID: 7634887583678189662}
+  - component: {fileID: 2098136510589867134}
   m_Layer: 0
   m_Name: Balde_Obj
   m_TagString: Untagged
@@ -31,6 +34,69 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4958908787776341904
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5849160647450056382}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.97094834, y: 0.8456985, z: 1}
+  m_Center: {x: -0.014525833, y: 0.3013781, z: 5.487133e-11}
+--- !u!114 &7634887583678189662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5849160647450056382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46602ab15b394cb4c86c9da12a55fee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usesGazeRing: 1
+--- !u!114 &2098136510589867134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5849160647450056382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c0cd8d5b922c9a4a9e8d3e38c24e3f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMat: {fileID: 2100000, guid: bcb0bd67bdb4047438730d90e1a0840d, type: 2}
+  scaleAnimation:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.6923074
+      outSlope: 0.6923074
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.1625
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.9399996
+      outSlope: -2.9399996
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.10416669
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &4382189160432168453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85,6 +151,18 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 9146cb5885acf8844862c0db3e612088, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9146cb5885acf8844862c0db3e612088, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.678
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9146cb5885acf8844862c0db3e612088, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.678
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 9146cb5885acf8844862c0db3e612088, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.678
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9146cb5885acf8844862c0db3e612088, type: 3}
