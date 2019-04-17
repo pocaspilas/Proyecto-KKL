@@ -3,7 +3,7 @@
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-		_FirstPoint("First Point", Vector) = (0,0,0,0)
+		//_FirstPoint("First Point", Vector) = (0,0,0,0)
 		_SecondPoint("Second Point", Vector) = (0,0,0,0)
     }
     SubShader
@@ -37,8 +37,9 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-			float4 _FirstPoint;
+			//float4 _FirstPoint;
 			float4 _SecondPoint;
+			uniform float _AnimTime;
 
 			float3 Bezier(float t)
 			{
@@ -55,7 +56,8 @@
             {
                 v2f o;
 				float3 worldPos;
-				float loopedScaledTime = frac(_Time.y * timeScale);
+				//float loopedScaledTime = frac(_Time.y * timeScale);
+				float loopedScaledTime = frac(_AnimTime);
 				worldPos = mul(unity_ObjectToWorld, v.vertex.xyz * saturate(1 - (v.vertex.z + loopedScaledTime * 2))).xyz;
 				worldPos += Bezier(saturate(loopedScaledTime + (v.vertex.z + loopedScaledTime * 2) - 0.5));
 				v.vertex.xyz = mul(unity_WorldToObject, worldPos).xyz;

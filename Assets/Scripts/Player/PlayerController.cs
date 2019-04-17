@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public float speed;
 
     public int itemsCollected = 0;
+    public Animator pushke;
+    static public Vector3 PushkePosition { get { return instance.pushke.transform.position; } }
 
 
     [Header("Gaze Slow")]
@@ -41,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     public void Init()
     {
-
+        pushke.Play("Pushke_Disappear", 0, 1f);
         transform.position = GetWaypoint(0);
         currentWaypoint = 0;
         lastForward = (GetWaypoint(1) - GetWaypoint(0)).normalized;
@@ -120,5 +122,6 @@ public class PlayerController : MonoBehaviour
     public void OnItemCollect()
     {
         itemsCollected++;
+        pushke.Play("Pushke_Appear", 0, 0f);
     }
 }

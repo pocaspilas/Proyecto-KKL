@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4675019450950526}
   - component: {fileID: 7053084376204468379}
   - component: {fileID: 692632349148522026}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ArbolVR1Retouched
   m_TagString: Untagged
   m_Icon: {fileID: 0}
