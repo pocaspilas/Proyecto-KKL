@@ -9,12 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4341162128152594468}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cartel direcciones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 5
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &4341162128152594468
 Transform:
@@ -44,27 +44,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: ed76604a10d42964da2ce915b667a192, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: ed76604a10d42964da2ce915b667a192, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: ed76604a10d42964da2ce915b667a192, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: ed76604a10d42964da2ce915b667a192, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: ed76604a10d42964da2ce915b667a192, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: ed76604a10d42964da2ce915b667a192, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: ed76604a10d42964da2ce915b667a192, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: ed76604a10d42964da2ce915b667a192, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: ed76604a10d42964da2ce915b667a192, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: ed76604a10d42964da2ce915b667a192, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: ed76604a10d42964da2ce915b667a192, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: ed76604a10d42964da2ce915b667a192, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: ed76604a10d42964da2ce915b667a192, type: 3}
       propertyPath: m_LocalPosition.x

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1335911747436094114}
   - component: {fileID: 2067375805501244713}
   - component: {fileID: 4219514243192764952}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Box005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 421725328563830910}
   - component: {fileID: 4375640150823962913}
   - component: {fileID: 7018506904102601845}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Object001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 1704011281998168493}
   - component: {fileID: 658896879366246349}
   - component: {fileID: 4559989405007325017}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Box006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4164923114179578457}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: cartel B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +273,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3222010556247210627}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CartelB_Obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}

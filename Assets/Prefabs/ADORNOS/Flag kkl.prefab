@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 2657693727134038591}
   - component: {fileID: 8253088846340838742}
   - component: {fileID: 938557255099245828}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flag kkl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 16
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7629242644108156581
 Transform:
@@ -169,12 +169,12 @@ GameObject:
   - component: {fileID: 1913826315550779551}
   - component: {fileID: 5938667216910618198}
   - component: {fileID: 8065877880769002048}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 16
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7956453990549548595
 Transform:

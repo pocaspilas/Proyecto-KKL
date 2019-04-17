@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 31285400}
   - component: {fileID: 31285399}
   - component: {fileID: 31285398}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Flag ISRAEL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ GameObject:
   - component: {fileID: 6867379002668412078}
   - component: {fileID: 6709010524959172643}
   - component: {fileID: 9175739542268421799}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

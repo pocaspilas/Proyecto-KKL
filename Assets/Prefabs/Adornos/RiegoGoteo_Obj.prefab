@@ -11,12 +11,12 @@ GameObject:
   - component: {fileID: 7520646278419967258}
   - component: {fileID: 2520388694668994979}
   - component: {fileID: 5370286947871797010}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278419967258
 Transform:
@@ -89,12 +89,12 @@ GameObject:
   - component: {fileID: 7520646279557962834}
   - component: {fileID: 2520388694663519530}
   - component: {fileID: 5370286947860421531}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (25)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646279557962834
 Transform:
@@ -167,12 +167,12 @@ GameObject:
   - component: {fileID: 7520646278196131650}
   - component: {fileID: 2520388694656350383}
   - component: {fileID: 5370286947850894878}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278196131650
 Transform:
@@ -245,12 +245,12 @@ GameObject:
   - component: {fileID: 7520646277870804855}
   - component: {fileID: 2520388694701520498}
   - component: {fileID: 5370286947907367107}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (35)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646277870804855
 Transform:
@@ -323,12 +323,12 @@ GameObject:
   - component: {fileID: 7520646278369146398}
   - component: {fileID: 2520388694770816672}
   - component: {fileID: 5370286947838119953}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (39)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278369146398
 Transform:
@@ -401,12 +401,12 @@ GameObject:
   - component: {fileID: 7520646279291743004}
   - component: {fileID: 2520388694758294249}
   - component: {fileID: 5370286947817079896}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (23)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646279291743004
 Transform:
@@ -479,12 +479,12 @@ GameObject:
   - component: {fileID: 7520646278415779209}
   - component: {fileID: 2520388694593649137}
   - component: {fileID: 5370286947662921536}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (37)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278415779209
 Transform:
@@ -557,12 +557,12 @@ GameObject:
   - component: {fileID: 7520646277665379922}
   - component: {fileID: 2520388694578231542}
   - component: {fileID: 5370286947644849735}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (38)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646277665379922
 Transform:
@@ -635,12 +635,12 @@ GameObject:
   - component: {fileID: 7520646279491902033}
   - component: {fileID: 2520388694618503696}
   - component: {fileID: 5370286947687349409}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (22)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646279491902033
 Transform:
@@ -713,12 +713,12 @@ GameObject:
   - component: {fileID: 7520646277842440279}
   - component: {fileID: 2520388694620897514}
   - component: {fileID: 5370286947685975643}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646277842440279
 Transform:
@@ -791,12 +791,12 @@ GameObject:
   - component: {fileID: 7520646278622303902}
   - component: {fileID: 2520388695242986911}
   - component: {fileID: 5370286947365884718}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278622303902
 Transform:
@@ -869,12 +869,12 @@ GameObject:
   - component: {fileID: 7520646277847476323}
   - component: {fileID: 2520388695223375200}
   - component: {fileID: 5370286947350893521}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (28)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646277847476323
 Transform:
@@ -947,12 +947,12 @@ GameObject:
   - component: {fileID: 7520646278025887910}
   - component: {fileID: 2520388695273311611}
   - component: {fileID: 5370286947268447178}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278025887910
 Transform:
@@ -1025,12 +1025,12 @@ GameObject:
   - component: {fileID: 7520646277638022572}
   - component: {fileID: 2520388695271433764}
   - component: {fileID: 5370286947269288085}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646277638022572
 Transform:
@@ -1103,12 +1103,12 @@ GameObject:
   - component: {fileID: 7520646277783320588}
   - component: {fileID: 2520388695271258090}
   - component: {fileID: 5370286947270586715}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (31)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646277783320588
 Transform:
@@ -1181,12 +1181,12 @@ GameObject:
   - component: {fileID: 7520646277828008922}
   - component: {fileID: 2520388695159009159}
   - component: {fileID: 5370286947147950390}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (24)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646277828008922
 Transform:
@@ -1259,12 +1259,12 @@ GameObject:
   - component: {fileID: 7520646279124854489}
   - component: {fileID: 2520388695470360760}
   - component: {fileID: 5370286947591556617}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (21)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646279124854489
 Transform:
@@ -1337,12 +1337,12 @@ GameObject:
   - component: {fileID: 7520646279492015783}
   - component: {fileID: 2520388695504258881}
   - component: {fileID: 5370286947623649776}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646279492015783
 Transform:
@@ -1415,12 +1415,12 @@ GameObject:
   - component: {fileID: 7520646277581260040}
   - component: {fileID: 2520388695563735887}
   - component: {fileID: 5370286947548517886}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646277581260040
 Transform:
@@ -1493,12 +1493,12 @@ GameObject:
   - component: {fileID: 7520646279162047252}
   - component: {fileID: 2520388695341298016}
   - component: {fileID: 5370286947468916689}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646279162047252
 Transform:
@@ -1571,12 +1571,12 @@ GameObject:
   - component: {fileID: 7520646278886789602}
   - component: {fileID: 2520388695343896561}
   - component: {fileID: 5370286947465253184}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (27)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278886789602
 Transform:
@@ -1649,12 +1649,12 @@ GameObject:
   - component: {fileID: 7520646278456559588}
   - component: {fileID: 2520388695718110150}
   - component: {fileID: 5370286948919764343}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278456559588
 Transform:
@@ -1727,12 +1727,12 @@ GameObject:
   - component: {fileID: 7520646278883147648}
   - component: {fileID: 2520388695816343566}
   - component: {fileID: 5370286948889679551}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278883147648
 Transform:
@@ -1805,12 +1805,12 @@ GameObject:
   - component: {fileID: 7520646277915607250}
   - component: {fileID: 2520388695600824524}
   - component: {fileID: 5370286948802217597}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (19)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646277915607250
 Transform:
@@ -1883,12 +1883,12 @@ GameObject:
   - component: {fileID: 7520646278716311977}
   - component: {fileID: 2520388695864781294}
   - component: {fileID: 5370286949059358559}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (26)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278716311977
 Transform:
@@ -1961,12 +1961,12 @@ GameObject:
   - component: {fileID: 7520646278836654794}
   - component: {fileID: 2520388695926797639}
   - component: {fileID: 5370286948996297718}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278836654794
 Transform:
@@ -2039,12 +2039,12 @@ GameObject:
   - component: {fileID: 7520646279712608629}
   - component: {fileID: 2520388695923848954}
   - component: {fileID: 5370286948982468683}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (29)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646279712608629
 Transform:
@@ -2117,12 +2117,12 @@ GameObject:
   - component: {fileID: 7520646278991503047}
   - component: {fileID: 2520388695975248206}
   - component: {fileID: 5370286949048551423}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278991503047
 Transform:
@@ -2195,12 +2195,12 @@ GameObject:
   - component: {fileID: 7520646278578836100}
   - component: {fileID: 2520388696304030457}
   - component: {fileID: 5370286948435612744}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278578836100
 Transform:
@@ -2273,12 +2273,12 @@ GameObject:
   - component: {fileID: 7520646278548761298}
   - component: {fileID: 2520388696309587918}
   - component: {fileID: 5370286948428945791}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278548761298
 Transform:
@@ -2351,12 +2351,12 @@ GameObject:
   - component: {fileID: 7520646279198684089}
   - component: {fileID: 2520388696385349350}
   - component: {fileID: 5370286948369965143}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (20)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646279198684089
 Transform:
@@ -2429,12 +2429,12 @@ GameObject:
   - component: {fileID: 7520646278074934139}
   - component: {fileID: 2520388696365684223}
   - component: {fileID: 5370286948357116750}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278074934139
 Transform:
@@ -2507,12 +2507,12 @@ GameObject:
   - component: {fileID: 7520646278395336548}
   - component: {fileID: 2520388696134004297}
   - component: {fileID: 5370286948253264120}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (34)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278395336548
 Transform:
@@ -2585,12 +2585,12 @@ GameObject:
   - component: {fileID: 7520646278065412934}
   - component: {fileID: 2520388696163570169}
   - component: {fileID: 5370286948290795336}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278065412934
 Transform:
@@ -2663,12 +2663,12 @@ GameObject:
   - component: {fileID: 7520646278084549763}
   - component: {fileID: 2520388696209321900}
   - component: {fileID: 5370286948193675549}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (18)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278084549763
 Transform:
@@ -2741,12 +2741,12 @@ GameObject:
   - component: {fileID: 7520646278413577212}
   - component: {fileID: 2520388696548987313}
   - component: {fileID: 5370286948676081408}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (36)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278413577212
 Transform:
@@ -2819,12 +2819,12 @@ GameObject:
   - component: {fileID: 7520646278039459052}
   - component: {fileID: 2520388696446986116}
   - component: {fileID: 5370286948576829749}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (33)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278039459052
 Transform:
@@ -2897,12 +2897,12 @@ GameObject:
   - component: {fileID: 7520646278094105991}
   - component: {fileID: 2520388696452461684}
   - component: {fileID: 5370286948571296453}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (30)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278094105991
 Transform:
@@ -2975,12 +2975,12 @@ GameObject:
   - component: {fileID: 7520646278495539507}
   - component: {fileID: 2520388696435097492}
   - component: {fileID: 5370286948556159269}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (32)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278495539507
 Transform:
@@ -3053,12 +3053,12 @@ GameObject:
   - component: {fileID: 7520646278733955437}
   - component: {fileID: 2520388696501008240}
   - component: {fileID: 5370286948490244545}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ArbolVR1 (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 17
+  m_StaticEditorFlags: 21
   m_IsActive: 1
 --- !u!4 &7520646278733955437
 Transform:
@@ -3129,12 +3129,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7520646279677155447}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RiegoGoteo_Obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &7520646279677155447
 Transform:
@@ -3200,12 +3200,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5075035644060108232}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: TierraGoteo_Obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &5075035644060108232
 Transform:
@@ -3233,12 +3233,12 @@ GameObject:
   - component: {fileID: 9055081488168947398}
   - component: {fileID: 9055081488171847398}
   - component: {fileID: 9055081488170847270}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: tierra goteo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &9055081488168947398
 Transform:
