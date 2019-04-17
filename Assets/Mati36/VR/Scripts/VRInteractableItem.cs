@@ -8,6 +8,8 @@ namespace Mati36.VR
     public class VRInteractableItem : MonoBehaviour
     {
 
+        public string itemName = "";
+
         private bool _isOver;
         private bool _isClicked;
         public bool IsOver { get { return _isOver; } }

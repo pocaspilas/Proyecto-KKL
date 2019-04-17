@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46602ab15b394cb4c86c9da12a55fee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemName: Semillas
   usesGazeRing: 1
 --- !u!114 &900093549
 MonoBehaviour:

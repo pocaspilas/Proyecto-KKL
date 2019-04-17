@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Mati36.UI;
+using UnityEngine.UI;
 
 namespace Mati36.VR
 {
@@ -29,6 +30,9 @@ namespace Mati36.VR
         [Range(0f, 5f)]
         public float cameraTurnSpeed = 1;
 
+        [Header("Label")]
+        public Text itemLabelText;
+
         private RaycastHit gazeHit;
         private Ray cameraRay;
 
@@ -53,6 +57,7 @@ namespace Mati36.VR
             reticle.transform.position = transform.position + (minReticleDist * transform.forward);
             reticle.transform.localScale = Vector3.one * reticleSize * minReticleDist;
             Cursor.visible = false;
+            itemLabelText.text = "";
         }
 
         VRInteractableItem gazedItem;
@@ -93,6 +98,8 @@ namespace Mati36.VR
                         ring.StartFill(ringFillTime);
                     else
                         ring.StopFill();
+
+                    itemLabelText.text = currentObjectGazed.itemName;
                 }
             }
             else
@@ -108,6 +115,8 @@ namespace Mati36.VR
 
                     if (reticleUsingNormals)
                         reticle.transform.forward = transform.forward;
+
+                    itemLabelText.text = "";
                 }
             }
 
