@@ -29,4 +29,20 @@ MonoBehaviour:
     icon: {fileID: 2800000, guid: 5129f99b9b10a224d92af5308d4390ab, type: 3}
     icon_16: {fileID: 2800000, guid: c587c0f715a1c574f935dc32a2473594, type: 3}
     assetName: Data
+  - guid: e07d0ded7cf154c43b70471ee339711c
+    icon: {fileID: 2800000, guid: 8a366b87fc267e74e8e8d4b3177afb38, type: 3}
+    icon_16: {fileID: 2800000, guid: 601da5d782c819f49b35625975466b97, type: 3}
+    assetName: Prefabs
+  - guid: 6ade97c8e60bfc748afb048570b313dd
+    icon: {fileID: 2800000, guid: 562c7380e4e37dc4da25e16252998bdb, type: 3}
+    icon_16: {fileID: 2800000, guid: e69511a63603e0d4aab5707237ba4fce, type: 3}
+    assetName: Scenes
+  - guid: bf40972fcb63c644289d36ec4d9e2c45
+    icon: {fileID: 2800000, guid: ec4dba6b7f28bbf458d509d32e5cb533, type: 3}
+    icon_16: {fileID: 2800000, guid: f98d675578fd4b44ab327806f7d61852, type: 3}
+    assetName: Scripts
+  - guid: 903709ee38b097c48809fd6c80ce2a20
+    icon: {fileID: 2800000, guid: beface08850902642a69784645435972, type: 3}
+    icon_16: {fileID: 2800000, guid: c73950005190ec94f8c44c60f103b833, type: 3}
+    assetName: Mati36
   defaultIcon: {fileID: 0}
