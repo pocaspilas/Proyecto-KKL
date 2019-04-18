@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46602ab15b394cb4c86c9da12a55fee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Carreta
+  itemName: Carretilla
   usesGazeRing: 1
 --- !u!114 &8508198452925425498
 MonoBehaviour:
@@ -99,6 +99,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  pickSound: {fileID: 11400000, guid: 0e74472a96a69604c8c8e4bab55dcf30, type: 2}
 --- !u!1001 &740702082855643023
 PrefabInstance:
   m_ObjectHideFlags: 0

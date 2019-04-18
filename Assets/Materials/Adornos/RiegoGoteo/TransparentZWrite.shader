@@ -9,7 +9,7 @@
     }
     SubShader
     {
-        Tags { "RenderType"="TransparentCutout"  "Queue"="Opaque"}
+        Tags { "RenderType"="TransparentCutout"  "Queue"="Geometry"}
         LOD 200
 
 	ZWrite On

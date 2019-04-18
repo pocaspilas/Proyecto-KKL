@@ -100,7 +100,17 @@ ModelImporter:
     4300000: child01_f_mediumpoly
     9500000: //RootNode
     13700000: child01_f_mediumpoly
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: 27e5fb7d928c67b459c17dd13bd420ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hair_transparent
+    second: {fileID: 2100000, guid: b40db1b6fc148f342be58188f3f72450, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

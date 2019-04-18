@@ -53,6 +53,7 @@ MonoBehaviour:
   gazeSlow: 2
   gazeSlowTime: 1
   gazeSpeedTime: 2
+  bgMusic: {fileID: 0}
 --- !u!1 &6059890605977392919
 GameObject:
   m_ObjectHideFlags: 0

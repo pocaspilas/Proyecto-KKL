@@ -15,3 +15,5 @@ MonoBehaviour:
   categoryNames:
   - Default
   - BG
+  - FX
+  processedClips: []

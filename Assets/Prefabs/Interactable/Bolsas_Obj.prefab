@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 7431002749814226720}
   m_LocalRotation: {x: 0, y: -0.9907467, z: 0, w: 0.13572426}
   m_LocalPosition: {x: 224.3, y: 1.519, z: 251.672}
-  m_LocalScale: {x: 0.8178472, y: 0.8178472, z: 0.8178472}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1169247737242350297}
   m_Father: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  pickSound: {fileID: 11400000, guid: 0e74472a96a69604c8c8e4bab55dcf30, type: 2}
 --- !u!1001 &1169247737242478681
 PrefabInstance:
   m_ObjectHideFlags: 0

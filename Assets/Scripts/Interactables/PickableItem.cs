@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Mati36.VR;
+using Mati36.Sound;
 
 [SelectionBase]
 [RequireComponent(typeof(VRInteractableItem))]
@@ -20,6 +21,8 @@ public class PickableItem : MonoBehaviour
     private bool picked;
 
     public AnimationCurve scaleAnimation;
+    [Header("Sounds")]
+    public SoundAsset pickSound;
 
     private void Awake()
     {
@@ -67,26 +70,13 @@ public class PickableItem : MonoBehaviour
 
     private void Interactable_OnRingComplete()
     {
-        //if (picked) return;
-        //if (pickMatInstance == null)
-        //{
-        //    pickMatInstance = new Material(pickMat);
-        //    pickMatInstance.mainTexture = sharedMat.mainTexture;
-        //}
-        //foreach (var r in _rend)
-        //    r.material = pickMatInstance;
-
         StartCoroutine(PickAnimation());
-
-
         PlayerController.instance.OnItemCollect();
-        //ani.Play("Object_Pick", 0, 0f);
-        //enabled = false;
-        //Destroy(gameObject);
     }
 
     IEnumerator PickAnimation()
     {
+        SoundManager.PlayOneShotSound(pickSound);
         picked = true;
         _interactable.enabled = false;
         float time = 0;
@@ -100,5 +90,11 @@ public class PickableItem : MonoBehaviour
             yield return null;
         }
         Destroy(gameObject);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, 5f);
     }
 }

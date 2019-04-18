@@ -98,6 +98,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  pickSound: {fileID: 11400000, guid: 0e74472a96a69604c8c8e4bab55dcf30, type: 2}
 --- !u!1001 &6206959355006700321
 PrefabInstance:
   m_ObjectHideFlags: 0

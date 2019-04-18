@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using Mati36.SoundManager;
+using Mati36.Sound;
 
-namespace Mati36.SoundManagerEditor
+namespace Mati36.SoundEditor
 {
     [CustomEditor(typeof(SoundAsset))]
     public class SoundAssetEditor : Editor

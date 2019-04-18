@@ -1,4 +1,5 @@
-﻿using Mati36.VR;
+﻿using Mati36.Sound;
+using Mati36.VR;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,9 @@ public class PlayerController : MonoBehaviour
     public float gazeSpeedTime;
     private float timeGazing = 0;
 
+    [Header("Sounds")]
+    public SoundAsset bgMusic;
+
     private void Awake()
     {
         if (instance == null)
@@ -47,13 +51,13 @@ public class PlayerController : MonoBehaviour
         transform.position = GetWaypoint(0);
         currentWaypoint = 0;
         lastForward = (GetWaypoint(1) - GetWaypoint(0)).normalized;
-        //lastForward = transform.forward;
         nextForward = (GetWaypoint(2) - GetWaypoint(1)).normalized;
         transform.forward = lastForward;
 
         isMoving = false;
         timeGazing = 0;
-        //StartCoroutine(DelayStart());
+
+        SoundManager.PlaySound(bgMusic, true);
     }
 
     Vector3 GetWaypoint(int index)
