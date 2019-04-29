@@ -11,11 +11,19 @@ public class PlayerController : MonoBehaviour
     static public PlayerController instance;
 
     public GameObject eyeCamera;
+    [SerializeField, ReadOnly]
     private int currentWaypoint;
 
     static public bool isMoving;
-    public float speed;
 
+    public float maxSpeed;
+    public float accel;
+
+    public int initialWaypoint = 0;
+
+    private float currentSpeed;
+
+    [ReadOnly(true)]
     public int itemsCollected = 0;
     public Animator pushke;
     static public Vector3 PushkePosition { get { return instance.pushke.transform.position; } }
@@ -29,6 +37,10 @@ public class PlayerController : MonoBehaviour
 
     [Header("Sounds")]
     public SoundAsset bgMusic;
+
+    [Header("Panel")]
+    public Text panelText;
+    public Animator panelAni;
 
     private void Awake()
     {
@@ -48,16 +60,21 @@ public class PlayerController : MonoBehaviour
     public void Init()
     {
         pushke.Play("Pushke_Disappear", 0, 1f);
-        transform.position = GetWaypoint(0);
-        currentWaypoint = 0;
-        lastForward = (GetWaypoint(1) - GetWaypoint(0)).normalized;
-        nextForward = (GetWaypoint(2) - GetWaypoint(1)).normalized;
+        transform.position = GetWaypoint(initialWaypoint);
+        currentWaypoint = initialWaypoint;
+        lastForward = (GetWaypoint(initialWaypoint+1) - GetWaypoint(initialWaypoint)).normalized;
+        nextForward = (GetWaypoint(initialWaypoint+2) - GetWaypoint(initialWaypoint+1)).normalized;
         transform.forward = lastForward;
 
         isMoving = false;
         timeGazing = 0;
 
+        HidePanel(true);
+
         SoundManager.PlaySound(bgMusic, true);
+
+        ShowPanel("Bienvenidos al Bosque KKL");
+        Utility.ExecuteAfterSeconds(4, delegate { HidePanel(); });
     }
 
     Vector3 GetWaypoint(int index)
@@ -91,7 +108,7 @@ public class PlayerController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (!isMoving) return;
+        //if (currentSpeed <= 0) { return; }
         if (currentWaypoint >= WaypointsRoute.splinePoints.Count - 1) return;
         MoveThroughPoints();
     }
@@ -103,14 +120,23 @@ public class PlayerController : MonoBehaviour
 
     private void MoveThroughPoints()
     {
-        Debug.DrawRay(transform.position, transform.forward * 5f, Color.green);
+        //Debug.DrawRay(transform.position, transform.forward * 5f, Color.green);
 
         Vector3 current = GetWaypoint(currentWaypoint);
         Vector3 next = GetWaypoint(currentWaypoint + 1);
 
         transform.position = Vector3.Lerp(current, next, t);
         transform.forward = Vector3.Slerp(lastForward, nextForward, t);
-        t += (Time.deltaTime * (speed - gazeSlow * timeGazing)) / Vector3.Distance(current, next);
+
+        if (isMoving)
+            currentSpeed += Time.deltaTime * accel;
+        else
+            currentSpeed -= Time.deltaTime * accel;
+        currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
+
+        if (currentSpeed <= 0) return;
+
+        t += Mathf.Max(0f, (Time.deltaTime * (currentSpeed - gazeSlow * timeGazing)) / Vector3.Distance(current, next));
 
         if (t > 1)
         {
@@ -126,6 +152,78 @@ public class PlayerController : MonoBehaviour
     public void OnItemCollect()
     {
         itemsCollected++;
+        if (currentPushkeRoutine != null)
+            StopCoroutine(currentPushkeRoutine);
+        else
+            ShowPushke();
+
+        StartCoroutine(PushkeRoutine(1.5f));
+
+    }
+
+    Coroutine currentPushkeRoutine;
+
+    private IEnumerator PushkeRoutine(float secToShow)
+    {
+        yield return new WaitForSeconds(secToShow);
+        HidePushke();
+    }
+
+    //PUSHKE
+    public void ShowPushke()
+    {
         pushke.Play("Pushke_Appear", 0, 0f);
     }
+
+    public void HidePushke()
+    {
+        pushke.Play("Pushke_Disappear", 0, 0f);
+    }
+
+    //PANEL
+    public void ShowPanel(string text)
+    {
+        panelAni.Play("Panel_Appear", 0, 0f);
+        panelText.text = text;
+    }
+
+    public void HidePanel(bool immediatly = false)
+    {
+        panelAni.Play("Panel_Disappear", 0, immediatly ? 1f : 0f);
+    }
+
+    //private void OnDrawGizmos()
+    //{
+
+    //    Gizmos.color = Color.yellow;
+
+    //    Vector2 current = GetWaypoint(currentWaypoint).XZ();
+    //    Vector2 next = GetWaypoint(currentWaypoint + 1).XZ();
+
+    //    Vector3 closestPoint;
+
+    //    Vector2 dir = next - current;
+
+    //    Gizmos.DrawRay(UseYAsZ(current), UseYAsZ(dir));
+
+    //    Vector2 pDir = transform.position.XZ() - current;
+    //    Gizmos.color = Color.green;
+    //    Gizmos.DrawRay(UseYAsZ(current), UseYAsZ(pDir));
+
+
+    //    float dot = Vector2.Dot(dir, pDir);
+    //    dot = dot / dir.magnitude;
+
+    //    Gizmos.color = Color.yellow;
+    //    Gizmos.DrawWireSphere(UseYAsZ(current), dot);
+
+
+    //    closestPoint = current + dir.normalized * dot;
+    //    Gizmos.DrawWireSphere(UseYAsZ(closestPoint), 1f);
+    //}
+
+    //private Vector3 UseYAsZ(Vector2 vector)
+    //{
+    //    return new Vector3(vector.x, 3f, vector.y);
+    //}
 }

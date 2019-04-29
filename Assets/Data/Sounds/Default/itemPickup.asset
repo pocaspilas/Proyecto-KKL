@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5b1756339a637c479bd5907b065cbe2, type: 3}
   m_Name: itemPickup
   m_EditorClassIdentifier: 
-  category: 0
+  category: 2
   clip: {fileID: 8300000, guid: 5d51d19dd8f33b348a72e2a97d33c3f4, type: 3}
   vol: 0.3

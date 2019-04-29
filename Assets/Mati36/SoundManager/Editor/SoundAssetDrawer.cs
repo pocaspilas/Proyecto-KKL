@@ -42,6 +42,35 @@ namespace Mati36.SoundEditor
                     AddMenuItem(menu, "No SoundAssets found", null);
                 menu.DropDown(popupRect);
             }
+
+            HandleEvents(position, property, label);
+        }
+
+        private void HandleEvents(Rect position, SerializedProperty property, GUIContent label)
+        {
+            Event e = Event.current;
+
+            if (!position.Contains(e.mousePosition)) return;
+
+            if (e.type == EventType.MouseDown && e.button == 1)
+            {
+                GenericMenu contextMenu = new GenericMenu();
+                contextMenu.AddItem(new GUIContent("Select Sound Asset"), false, () => Selection.activeObject = property.objectReferenceValue);
+                contextMenu.AddItem(new GUIContent("Select Audio Clip"), false, () => Selection.activeObject = ((SoundAsset)property.objectReferenceValue).clip);
+                contextMenu.ShowAsContext();
+            }
+
+            DragAndDrop.visualMode = DragAndDropVisualMode.Generic;
+            if (e.type == EventType.DragPerform)
+            {
+                SoundAsset draggedAsset = DragAndDrop.objectReferences[0] as SoundAsset;
+                if (draggedAsset != null)
+                {
+                    serializedProp.objectReferenceValue = draggedAsset;
+                    serializedProp.serializedObject.ApplyModifiedProperties();
+                }
+            }
+
         }
 
         private void AddMenuItem(GenericMenu menu, string menuPath, SoundAsset asset)

@@ -29,11 +29,12 @@ namespace Mati36.Sound
             if(GlobalAudioSource == null) { Debug.Log("Can't create GlobalAudioSource"); return; }
         }
 
-        //PLAY
+        //PLAYBACK
 
         static public void PlaySound(SoundAsset sound, bool loop)
         {
             GlobalAudioSource.clip = sound.clip;
+            GlobalAudioSource.volume = sound.vol;
             GlobalAudioSource.loop = loop;
             GlobalAudioSource.Play();
         }
@@ -41,6 +42,17 @@ namespace Mati36.Sound
         static public void PlayOneShotSound(SoundAsset sound)
         {
             GlobalAudioSource.PlayOneShot(sound.clip, sound.vol);
+        }
+
+        static public void ModifySpeed(float speed)
+        {
+            if (speed == 0)
+                GlobalAudioSource.Pause();
+            else
+            {
+                GlobalAudioSource.UnPause();
+                GlobalAudioSource.pitch = speed;
+            }
         }
     }
 }

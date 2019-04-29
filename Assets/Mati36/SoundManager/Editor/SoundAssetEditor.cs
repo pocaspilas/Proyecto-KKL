@@ -6,7 +6,7 @@ using Mati36.Sound;
 
 namespace Mati36.SoundEditor
 {
-    [CustomEditor(typeof(SoundAsset))]
+    [CustomEditor(typeof(SoundAsset)), CanEditMultipleObjects]
     public class SoundAssetEditor : Editor
     {
 
