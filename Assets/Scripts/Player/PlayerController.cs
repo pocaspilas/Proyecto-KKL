@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Sounds")]
     public SoundAsset bgMusic;
+    public SoundAsset pushkeAppear, pushkeDisappear;
 
     [Header("Panel")]
     public Text panelText;
@@ -172,12 +173,23 @@ public class PlayerController : MonoBehaviour
     //PUSHKE
     public void ShowPushke()
     {
+        if (pushkeAppear)
+            SoundManager.PlayOneShotSound(pushkeAppear);
         pushke.Play("Pushke_Appear", 0, 0f);
+        SetPushkeSpeed(1);
+    }
+
+    public void SetPushkeSpeed(float speed)
+    {
+        pushke.speed = speed;
     }
 
     public void HidePushke()
     {
-        pushke.Play("Pushke_Disappear", 0, 0f);
+        if (pushkeDisappear)
+            SoundManager.PlayOneShotSound(pushkeDisappear);
+        pushke.CrossFadeInFixedTime("Pushke_Disappear", 0.5f);
+        //pushke.Play("Pushke_Disappear", 0, 0f);
     }
 
     //PANEL

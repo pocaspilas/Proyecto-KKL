@@ -100,6 +100,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   pickSound: {fileID: 11400000, guid: 0e74472a96a69604c8c8e4bab55dcf30, type: 2}
+  coinSound: {fileID: 11400000, guid: 99dea983c091f2e47a5138c876bb9eb3, type: 2}
 --- !u!1001 &740702082855643023
 PrefabInstance:
   m_ObjectHideFlags: 0

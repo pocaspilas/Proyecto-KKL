@@ -10,6 +10,6 @@ namespace Mati36.Sound
     {
         public int category;
         public AudioClip clip;
-        public float vol = 1;
+        public float vol = 0.5f;
     }
 }

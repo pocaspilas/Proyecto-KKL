@@ -17,19 +17,20 @@ public class PickableItem : MonoBehaviour
 
     public Material outlineMat;
     private Material outlineMatInstance;
-    
+
     private bool picked;
 
     public AnimationCurve scaleAnimation;
     [Header("Sounds")]
     public SoundAsset pickSound;
+    public SoundAsset coinSound;
 
     private void Awake()
     {
         _interactable = GetComponent<VRInteractableItem>();
         _rend = GetComponentsInChildren<Renderer>();
         sharedMat = _rend[0].sharedMaterial;
-        
+
         ani = GetComponent<Animator>();
         picked = false;
     }
@@ -52,7 +53,7 @@ public class PickableItem : MonoBehaviour
     {
         if (picked) return;
 
-        if(outlineMatInstance == null)
+        if (outlineMatInstance == null)
         {
             outlineMatInstance = new Material(outlineMat);
             outlineMatInstance.mainTexture = sharedMat.mainTexture;
@@ -82,13 +83,15 @@ public class PickableItem : MonoBehaviour
         float time = 0;
         Vector3 initialPos = transform.position;
         Vector3 initialScale = transform.localScale;
-        while(time < 1)
+        while (time < 1)
         {
             transform.position = BezierUtility.SimpleBezier(initialPos, PlayerController.PushkePosition, time, 5f);
             transform.localScale = initialScale * scaleAnimation.Evaluate(time);
             time += Time.deltaTime;
             yield return null;
         }
+        if (coinSound)
+            SoundManager.PlayOneShotSound(coinSound);
         Destroy(gameObject);
     }
 

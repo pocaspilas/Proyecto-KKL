@@ -10,10 +10,42 @@ namespace Mati36.SoundEditor
     {
         void OnPostprocessAudio(AudioClip clip)
         {
-            SoundAsset newAsset = ScriptableObject.CreateInstance<SoundAsset>();
             AudioClip clipAsset = AssetDatabase.LoadAssetAtPath(assetPath, typeof(AudioClip)) as AudioClip;
-            if (clipAsset == null) { Debug.Log("Clip asset is null, reimport."); return; }
+            if (clipAsset == null) {
+                EditorApplication.update += CreateSoundAsset;
+                Debug.Log("Clip asset is null, trying again."); return;
+            }
             if (!SoundConfig.Current.OnProcessClip(clipAsset)) return;
+
+            SoundAsset newAsset = ScriptableObject.CreateInstance<SoundAsset>();
+            newAsset.clip = clipAsset;
+            if (!AssetDatabase.IsValidFolder("Assets/Data"))
+                AssetDatabase.CreateFolder("Assets", "Data");
+            if (!AssetDatabase.IsValidFolder("Assets/Data/Sounds"))
+                AssetDatabase.CreateFolder("Assets/Data", "Sounds");
+            if (!AssetDatabase.IsValidFolder("Assets/Data/Sounds/Default"))
+                AssetDatabase.CreateFolder("Assets/Data/Sounds", "Default");
+
+            AssetDatabase.CreateAsset(newAsset, "Assets/Data/Sounds/Default/" + clipAsset.name + ".asset");
+            AssetDatabase.SaveAssets();
+            Debug.Log("Created " + clipAsset.name + " SoundAsset.");
+        }
+
+        private void CreateSoundAsset()
+        {
+            Debug.Log("Updating...");
+            EditorApplication.update -= CreateSoundAsset;
+
+            AudioClip clipAsset = AssetDatabase.LoadAssetAtPath(assetPath, typeof(AudioClip)) as AudioClip;
+
+            if (clipAsset == null)
+            {
+                Debug.Log("Clip asset is null, reimport."); return;
+            }
+
+            if (!SoundConfig.Current.OnProcessClip(clipAsset)) return;
+
+            SoundAsset newAsset = ScriptableObject.CreateInstance<SoundAsset>();
             newAsset.clip = clipAsset;
             if (!AssetDatabase.IsValidFolder("Assets/Data"))
                 AssetDatabase.CreateFolder("Assets", "Data");

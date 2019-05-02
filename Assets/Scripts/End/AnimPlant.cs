@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AnimPlant : MonoBehaviour
 {
+    public float maxSize;
+    public float speed;
     public AnimationCurve growCurve;
     IEnumerator Start()
     {
@@ -11,11 +13,11 @@ public class AnimPlant : MonoBehaviour
         float t = 0;
         while (t < 1)
         {
-            transform.localScale = Vector3.one * t * r; 
-            t += Time.deltaTime * 0.5f;
+            transform.localScale = Vector3.one * maxSize * t * r * growCurve.Evaluate(t); 
+            t += Time.deltaTime * speed;
             yield return null;
         }
-        transform.localScale = Vector3.one * r;
+        transform.localScale = Vector3.one * maxSize * r;
         yield break;
     }
 }

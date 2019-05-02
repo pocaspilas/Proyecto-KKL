@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Mati36.Sound;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,15 @@ public class EndAnimation : MonoBehaviour
     public GameObject coinPrefab;
     public AnimationCurve scaleAnimation;
 
+    public PlantController plantController;
+
     public Transform target;
+
+    public SoundAsset coinSound, treeSound;
+
+    [Header("Animation")]
+    public float timeBetweenCoins;
+    public float coinPlantDuration;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,15 +35,25 @@ public class EndAnimation : MonoBehaviour
 
         yield return new WaitForSeconds(1);
         PlayerController.instance.ShowPushke();
-        
+        yield return new WaitForSeconds(1f);
+        PlayerController.instance.SetPushkeSpeed(1f / (timeBetweenCoins / 0.5f));
+
         for (int i = 0; i < PlayerController.instance.itemsCollected; i++)
         {
+            if (coinSound)
+                SoundManager.PlayOneShotSound(coinSound);
             var obj = Instantiate(coinPrefab);
             StartCoroutine(PlantAnimation(obj));
-            yield return new WaitForSeconds(.5f);
+            if (i < PlayerController.instance.itemsCollected - 1)
+                yield return new WaitForSeconds(timeBetweenCoins);
         }
-
+        PlayerController.instance.SetPushkeSpeed(1f);
         PlayerController.instance.HidePushke();
+
+        yield return new WaitForSeconds(3f);
+        PlayerController.instance.ShowPanel("¡Gracias por ayudarnos a plantar " + PlayerController.instance.itemsCollected + " arboles!");
+        yield return new WaitForSeconds(3f);
+        PlayerController.instance.HidePanel();
     }
 
     IEnumerator PlantAnimation(GameObject obj)
@@ -46,9 +65,12 @@ public class EndAnimation : MonoBehaviour
         {
             obj.transform.position = BezierUtility.SimpleBezier(PlayerController.PushkePosition, target.transform.position, time, 5f);
             obj.transform.localScale = initialScale * scaleAnimation.Evaluate(time);
-            time += Time.deltaTime;
+            time += Time.deltaTime / coinPlantDuration;
             yield return null;
         }
+        if (treeSound)
+            SoundManager.PlayOneShotSound(treeSound);
+        plantController.Plant();
         Destroy(obj);
     }
 }

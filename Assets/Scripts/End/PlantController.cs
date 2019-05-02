@@ -17,7 +17,7 @@ public class PlantController : MonoBehaviour
 
     public void Plant()
     {
-        if (plantRoutine != null) return;
+        //if (plantRoutine != null) return;
         plantRoutine = StartCoroutine(PlantRoutine());
     }
 
@@ -25,23 +25,22 @@ public class PlantController : MonoBehaviour
 
     IEnumerator PlantRoutine()
     {
-        for (int i = 0; i < PlayerController.instance.itemsCollected; i++)
+        Vector2 rand = Random.insideUnitCircle * plantRadius;
+        Vector3 plantPos = new Vector3(rand.x, 0, rand.y);
+        plantPos += transform.position;
+        RaycastHit hit;
+        Ray r = new Ray(plantPos, Vector3.down);
+        Debug.DrawRay(r.origin, r.direction * 10, Color.red, 3);
+        Physics.Raycast(r, out hit, 10, terrainLayer);
+        if (hit.collider != null)
         {
-            Vector2 rand = Random.insideUnitCircle * plantRadius;
-            Vector3 plantPos = new Vector3(rand.x, 0,rand.y);
-            plantPos += transform.position;
-            RaycastHit hit;
-            Ray r = new Ray(plantPos, Vector3.down);
-            Debug.DrawRay(r.origin, r.direction * 10, Color.red, 3);
-            Physics.Raycast(r, out hit, 10, terrainLayer);
-            if (hit.collider != null)
-            {
-                Instantiate(treePrefab, hit.point, Quaternion.identity, transform);
-                yield return new WaitForSeconds(1);
-            }
-            else
-                Debug.Log("HIT NULL");
+            var tree = Instantiate(treePrefab, hit.point, Quaternion.identity, transform);
+            tree.transform.Rotate(0, Random.Range(0, 360), 0);
+            yield return new WaitForSeconds(1);
         }
+        else
+            Debug.Log("HIT NULL");
+
     }
 
     private void OnDrawGizmos()

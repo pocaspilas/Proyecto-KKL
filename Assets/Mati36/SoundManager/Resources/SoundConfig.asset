@@ -16,6 +16,17 @@ MonoBehaviour:
   - Default
   - BG
   - FX
+  - FX/Coins
   processedClips:
   - {fileID: 8300000, guid: 31d11f7ee2ebd3e4c8d0a5295408adb6, type: 3}
   - {fileID: 8300000, guid: 5d51d19dd8f33b348a72e2a97d33c3f4, type: 3}
+  - {fileID: 8300000, guid: 2ced5486074109c419581f696f04879f, type: 3}
+  - {fileID: 8300000, guid: 41ddde47bed3f9042a4b341c53e60054, type: 3}
+  - {fileID: 8300000, guid: 4cc34a9acad62194198f21cc72552ee8, type: 3}
+  - {fileID: 8300000, guid: 524aaaf563f4fb54196da636ba1624e8, type: 3}
+  - {fileID: 8300000, guid: 9af601d5acecb32459b83f275a455e3c, type: 3}
+  - {fileID: 8300000, guid: aaf4df69c5935524c91da76c27a2dc70, type: 3}
+  - {fileID: 8300000, guid: bc67ee73f8f8f474090bc7f73f57dc6f, type: 3}
+  - {fileID: 8300000, guid: c2267c15f96dc0e4aa6355f25b8bf816, type: 3}
+  - {fileID: 8300000, guid: d2eff6e65982be14f9e3fec4d41c06a1, type: 3}
+  - {fileID: 8300000, guid: fb13221bdb7a589498b3e4ac9fe6b4af, type: 3}
