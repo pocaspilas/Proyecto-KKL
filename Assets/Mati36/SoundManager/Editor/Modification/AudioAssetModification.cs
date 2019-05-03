@@ -13,6 +13,7 @@ namespace Mati36.SoundEditor
         static AssetDeleteResult OnWillDeleteAsset(string path, RemoveAssetOptions options)
         {
             var obj = AssetDatabase.LoadMainAssetAtPath(path);
+            if (obj == null) return AssetDeleteResult.DidNotDelete;
             if (obj.GetType() == typeof(SoundAsset))
                 SoundConfig.Current.OnDeleteSoundAsset((SoundAsset)obj);
             else if(obj.GetType() == typeof(AudioClip))

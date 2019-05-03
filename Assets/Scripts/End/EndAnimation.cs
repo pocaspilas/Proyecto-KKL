@@ -41,7 +41,10 @@ public class EndAnimation : MonoBehaviour
         for (int i = 0; i < PlayerController.instance.itemsCollected; i++)
         {
             if (coinSound)
-                SoundManager.PlayOneShotSound(coinSound);
+            {
+                float pitch = (((float)i) / PlayerController.instance.itemsCollected) / 2f + 0.5f;
+                SoundManager.PlaySoundAt(coinSound, PlayerController.instance.pushke.transform.position, pitch);
+            }
             var obj = Instantiate(coinPrefab);
             StartCoroutine(PlantAnimation(obj));
             if (i < PlayerController.instance.itemsCollected - 1)
@@ -54,6 +57,11 @@ public class EndAnimation : MonoBehaviour
         PlayerController.instance.ShowPanel("¡Gracias por ayudarnos a plantar " + PlayerController.instance.itemsCollected + " arboles!");
         yield return new WaitForSeconds(3f);
         PlayerController.instance.HidePanel();
+        yield return new WaitForSeconds(1f);
+
+        
+        
+        GlobalManager.instance.ChangeScene("MenuScene");
     }
 
     IEnumerator PlantAnimation(GameObject obj)
@@ -69,7 +77,7 @@ public class EndAnimation : MonoBehaviour
             yield return null;
         }
         if (treeSound)
-            SoundManager.PlayOneShotSound(treeSound);
+            SoundManager.PlaySoundAt(treeSound, obj.transform.position);
         plantController.Plant();
         Destroy(obj);
     }

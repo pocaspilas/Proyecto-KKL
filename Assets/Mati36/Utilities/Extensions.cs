@@ -15,6 +15,11 @@ static public class Extensions
         return $"<size={fontSize}>{text}</size>";
     }
 
+    static public string Bold(this string text)
+    {
+        return $"<b>{text}</b>";
+    }
+
     //LAYERMASK
     static public bool Matches(this LayerMask layer2, LayerMask layer1)
     {

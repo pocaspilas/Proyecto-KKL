@@ -17,6 +17,7 @@ MonoBehaviour:
   - BG
   - FX
   - FX/Coins
+  - FX/Birds
   processedClips:
   - {fileID: 8300000, guid: 31d11f7ee2ebd3e4c8d0a5295408adb6, type: 3}
   - {fileID: 8300000, guid: 5d51d19dd8f33b348a72e2a97d33c3f4, type: 3}

@@ -11,13 +11,14 @@ namespace Mati36.SoundEditor
     {
 
         int catIndex;
-        SerializedProperty clipProperty, volProperty, catProperty;
+        SerializedProperty clipProperty, volProperty, catProperty, pitchProperty;
 
         private void OnEnable()
         {
             clipProperty = serializedObject.FindProperty("clip");
             volProperty = serializedObject.FindProperty("vol");
             catProperty = serializedObject.FindProperty("category");
+            pitchProperty = serializedObject.FindProperty("pitchRange");
             catIndex = catProperty.intValue;
         }
 
@@ -29,8 +30,11 @@ namespace Mati36.SoundEditor
             catIndex = EditorGUILayout.Popup("Category", catIndex, SoundConfig.Current.categoryNames);
             if (EditorGUI.EndChangeCheck())
                 SetCategory(catIndex);
-            EditorGUILayout.PropertyField(clipProperty);
-            EditorGUILayout.PropertyField(volProperty);
+
+            DrawPropertiesExcluding(serializedObject, "m_Script","category");
+            //EditorGUILayout.PropertyField(clipProperty);
+            //EditorGUILayout.PropertyField(volProperty);
+            //EditorGUILayout.PropertyField(pitchProperty);
             serializedObject.ApplyModifiedProperties();
             serializedObject.Update();
         }

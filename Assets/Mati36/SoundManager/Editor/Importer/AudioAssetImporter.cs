@@ -13,7 +13,8 @@ namespace Mati36.SoundEditor
             AudioClip clipAsset = AssetDatabase.LoadAssetAtPath(assetPath, typeof(AudioClip)) as AudioClip;
             if (clipAsset == null) {
                 EditorApplication.update += CreateSoundAsset;
-                Debug.Log("Clip asset is null, trying again."); return;
+                //Debug.Log("Clip asset is null, trying again."); 
+                return;
             }
             if (!SoundConfig.Current.OnProcessClip(clipAsset)) return;
 
@@ -33,7 +34,7 @@ namespace Mati36.SoundEditor
 
         private void CreateSoundAsset()
         {
-            Debug.Log("Updating...");
+            //Debug.Log("Updating...");
             EditorApplication.update -= CreateSoundAsset;
 
             AudioClip clipAsset = AssetDatabase.LoadAssetAtPath(assetPath, typeof(AudioClip)) as AudioClip;

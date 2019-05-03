@@ -37,7 +37,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Sounds")]
     public SoundAsset bgMusic;
-    public SoundAsset pushkeAppear, pushkeDisappear;
+    public SoundAsset bgMusic2, pushkeAppear, pushkeDisappear;
+    private PoolableAudioSource currentMusic1, currentMusic2;
 
     [Header("Panel")]
     public Text panelText;
@@ -63,8 +64,8 @@ public class PlayerController : MonoBehaviour
         pushke.Play("Pushke_Disappear", 0, 1f);
         transform.position = GetWaypoint(initialWaypoint);
         currentWaypoint = initialWaypoint;
-        lastForward = (GetWaypoint(initialWaypoint+1) - GetWaypoint(initialWaypoint)).normalized;
-        nextForward = (GetWaypoint(initialWaypoint+2) - GetWaypoint(initialWaypoint+1)).normalized;
+        lastForward = (GetWaypoint(initialWaypoint + 1) - GetWaypoint(initialWaypoint)).normalized;
+        nextForward = (GetWaypoint(initialWaypoint + 2) - GetWaypoint(initialWaypoint + 1)).normalized;
         transform.forward = lastForward;
 
         isMoving = false;
@@ -72,10 +73,24 @@ public class PlayerController : MonoBehaviour
 
         HidePanel(true);
 
-        SoundManager.PlaySound(bgMusic, true);
+        StartMusic();
 
         ShowPanel("Bienvenidos al Bosque KKL");
         Utility.ExecuteAfterSeconds(4, delegate { HidePanel(); });
+    }
+
+    public void StartMusic()
+    {
+        if (bgMusic != null)
+            currentMusic1 = SoundManager.PlaySound(bgMusic);
+        if (bgMusic2 != null)
+            currentMusic2 = SoundManager.PlaySound(bgMusic2);
+    }
+
+    public void StopMusic()
+    {
+        currentMusic1?.StopSource();
+        currentMusic2?.StopSource();
     }
 
     Vector3 GetWaypoint(int index)

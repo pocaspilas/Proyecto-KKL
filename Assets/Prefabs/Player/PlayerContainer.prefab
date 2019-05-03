@@ -329,7 +329,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6059890605279996566}
   - component: {fileID: 6059890605279996567}
-  m_Layer: 0
+  - component: {fileID: 1394249038}
+  - component: {fileID: 1394249037}
+  m_Layer: 13
   m_Name: PlayerContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -367,16 +369,49 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eyeCamera: {fileID: 6059890605977392919}
+  currentWaypoint: 0
   maxSpeed: 3.8
   accel: 1.5
-  itemsCollected: 3
+  initialWaypoint: 30
+  itemsCollected: 8
   pushke: {fileID: 6589063058654763008}
   gazeSlow: 2
   gazeSlowTime: 1
   gazeSpeedTime: 2
   bgMusic: {fileID: 11400000, guid: 84bc8784a0b016141935750db218fb9a, type: 2}
+  pushkeAppear: {fileID: 11400000, guid: b8e79b5c5c97b3f4a92a14e460a56d34, type: 2}
+  pushkeDisappear: {fileID: 0}
   panelText: {fileID: 114390258174528448}
   panelAni: {fileID: 1692509671324659}
+--- !u!54 &1394249038
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6059890605279996568}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &1394249037
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6059890605279996568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6059890605977392919
 GameObject:
   m_ObjectHideFlags: 0

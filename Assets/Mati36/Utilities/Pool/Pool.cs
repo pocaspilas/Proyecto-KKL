@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pool<T>
+public class Pool<T> : IEnumerable<T>
 {
     private List<PoolObject<T>> _pool;
 
@@ -43,6 +43,18 @@ public class Pool<T>
         return newObj.Content;
     }
 
+    public T Get(Func<T, bool> condition)
+    {
+        for (int i = 0; i < _pool.Count; i++)
+        {
+            if (condition(_pool[i].Content))
+                return _pool[i].Content;
+        }
+        return default(T);
+    }
+
+
+
     public void Return(T obj)
     {
         for (int i = 0; i < _pool.Count; i++)
@@ -53,5 +65,19 @@ public class Pool<T>
                 _pool[i].IsActive = false;
             }
         }
+    }
+
+    public IEnumerator<T> GetEnumerator()
+    {
+        foreach (var source in _pool)
+        {
+            if (source.IsActive)
+                yield return source.Content;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        yield return GetEnumerator();
     }
 }

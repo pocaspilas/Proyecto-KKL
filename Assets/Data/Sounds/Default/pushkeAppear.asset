@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5b1756339a637c479bd5907b065cbe2, type: 3}
-  m_Name: powerup
+  m_Name: pushkeAppear
   m_EditorClassIdentifier: 
   category: 0
-  clip: {fileID: 8300000, guid: 152c9c9ecf8aa1245954f27804a467c8, type: 3}
+  clip: {fileID: 8300000, guid: 72cddd3872de9ad4197fc35b9368a2b5, type: 3}
   vol: 0.5
+  pitchRange: {x: 1, y: 1}

@@ -6,7 +6,29 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 using System.IO;
 
-static public class FilesMgr  {
+static public class FilesMgr
+{
+    const string MANAGER_NAME = "File Manager";
+    static string intPath;
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    public static void Initialize()
+    {
+        Debug.Log((MANAGER_NAME.ToUpper() + " // Initializing...").Bold());
+
+#if UNITY_ANDROID && !UNITY_EDITOR
+        string pathToFolder = "mnt/sdcard/" + Application.productName + "/";
+        if (!Directory.Exists(pathToFolder))
+            Directory.CreateDirectory(pathToFolder);
+        intPath = pathToFolder;
+#else
+        string pathToFolder = "Builds/Windows/GameData/";
+        if (!Directory.Exists(pathToFolder))
+            Directory.CreateDirectory(pathToFolder);
+        intPath = pathToFolder;
+#endif
+    }
+
     #region TXT FILE
 
     public static bool CheckFile(string filename, string extension)
@@ -54,7 +76,8 @@ static public class FilesMgr  {
         return text;
     }
 
-    public static void SaveTextFile(string filename, string extension, IEnumerable<string> content) {
+    public static void SaveTextFile(string filename, string extension, IEnumerable<string> content)
+    {
         File.WriteAllLines(intPath + filename + extension, content.ToArray());
     }
 
@@ -86,33 +109,14 @@ static public class FilesMgr  {
     }
     #endregion
     
-    static string intPath; 
-
-    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    public static void Initialize() {
-        Debug.Log("--INITIALIZING FileMgr");
-
-#if UNITY_ANDROID && !UNITY_EDITOR
-        string pathToFolder = "mnt/sdcard/" + Application.productName + "/";
-        if (!Directory.Exists(pathToFolder))
-            Directory.CreateDirectory(pathToFolder);
-        intPath = pathToFolder;
-#else
-        string pathToFolder = "Builds/Windows/GameData/";
-        if (!Directory.Exists(pathToFolder))
-            Directory.CreateDirectory(pathToFolder);
-        intPath = pathToFolder;
-#endif
-    }
-
-        #region CSV
-        /// <summary>
-        /// Generates a CSV representation of the public fields of a custom type list
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="dataList"></param>
-        /// <returns></returns>
-        public static string ToCsv<T>(List<T> dataList)
+    #region CSV
+    /// <summary>
+    /// Generates a CSV representation of the public fields of a custom type list
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="dataList"></param>
+    /// <returns></returns>
+    public static string ToCsv<T>(List<T> dataList)
     {
         string str = "";
 
@@ -128,7 +132,7 @@ static public class FilesMgr  {
         }
 
         str += "\n";
-        
+
         for (i = 0; i < dataList.Count; i++)//for each element on the list
         {
             for (j = 0; j < info.Length; j++)//for each field on the element
@@ -140,7 +144,7 @@ static public class FilesMgr  {
             if (i < dataList.Count - 1)
                 str += "\n";
         }
-        
+
         return str;
     }
 
@@ -176,5 +180,5 @@ static public class FilesMgr  {
         }
         return objectList;
     }
-#endregion
+    #endregion
 }
