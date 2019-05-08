@@ -55,6 +55,7 @@ namespace Mati36.SoundEditor
             if (e.type == EventType.MouseDown && e.button == 1)
             {
                 GenericMenu contextMenu = new GenericMenu();
+                contextMenu.AddItem(new GUIContent("Clear Field"), false, () => { serializedProp.objectReferenceValue = null; serializedProp.serializedObject.ApplyModifiedProperties(); });
                 contextMenu.AddItem(new GUIContent("Select Sound Asset"), false, () => Selection.activeObject = property.objectReferenceValue);
                 contextMenu.AddItem(new GUIContent("Select Audio Clip"), false, () => Selection.activeObject = ((SoundAsset)property.objectReferenceValue).clip);
                 contextMenu.ShowAsContext();

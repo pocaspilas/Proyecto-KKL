@@ -15,6 +15,7 @@ MonoBehaviour:
   scenesInBuild_Android:
   - {fileID: 102900000, guid: 8a070520dc46ddd4b85bcd9498b83cd9, type: 3}
   - {fileID: 102900000, guid: 289563eff8b774249a7993243efb3dbb, type: 3}
+  - {fileID: 102900000, guid: d568160b5ca8ea94ca81d1286c88cc0f, type: 3}
   scenesInBuild_Windows:
   - {fileID: 102900000, guid: e23803cb741a60f419eeaaf311d97812, type: 3}
   autorun: 1

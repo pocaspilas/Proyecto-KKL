@@ -10,7 +10,7 @@ namespace Mati36.Sound
         private bool isPaused;
         private AudioSource _audioSource;
 
-        private float currentPitch;
+        private float currentVol, currentPitch;
 
         public event Action<PoolableAudioSource> e_OnEndSound = delegate { };
 
@@ -26,8 +26,10 @@ namespace Mati36.Sound
         public void PlayAudio(AudioClip clip, SoundMode mode, float vol, float pitch, bool loop = false)
         {
             _audioSource.spatialBlend = mode == SoundMode.Mode2D ? 0 : 1;
+            _audioSource.spatialize = mode == SoundMode.Mode2D ? false : true;
             _audioSource.clip = clip;
             _audioSource.volume = vol;
+            currentVol = vol;
             _audioSource.pitch = pitch;
             currentPitch = pitch;
             _audioSource.loop = loop;
@@ -38,7 +40,7 @@ namespace Mati36.Sound
         private void Update()
         {
             if (!isPaused && !_audioSource.isPlaying)
-                e_OnEndSound(this);
+                StopSource();
         }
         //
         //PLAYBACK
@@ -55,8 +57,9 @@ namespace Mati36.Sound
             isPaused = false;
         }
 
-        public void StopSource()
+        public void StopSource()//vuelve al pool
         {
+            StopAllCoroutines();
             e_OnEndSound(this);
         }
         //
@@ -66,6 +69,35 @@ namespace Mati36.Sound
         {
             _audioSource.pitch = currentPitch * value;
         }
+        //
+        //FADE
+        //
+        public void FadeIn(float duration)
+        {
+            StartCoroutine(FadeRoutine(duration, true));
+        }
+        public void FadeOut(float duration)
+        {
+            StartCoroutine(FadeRoutine(duration, false));
+        }
+
+        private IEnumerator FadeRoutine(float duration, bool fadeIn)
+        {
+            float t = 0;
+            while (t < 1)
+            {
+                if (!isPaused)
+                {
+                    _audioSource.volume = fadeIn ? Mathf.Lerp(0f, currentVol, t) : Mathf.Lerp(currentVol, 0f, t);
+                    t += Time.deltaTime / duration;
+                }
+                yield return null;
+            }
+            _audioSource.volume = fadeIn ? currentVol : 0f;
+            if (!fadeIn)
+                StopSource();
+        }
+
     }
 
     public enum SoundMode { Mode2D, Mode3D }

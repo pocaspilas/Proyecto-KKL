@@ -11,9 +11,10 @@ namespace Mati36.Sound
         const string MANAGER_NAME = "Sound Manager";
 
         static private AudioSource globalAudioSource;
-        static private Pool<PoolableAudioSource> audioSourcePool;
-        const int DEFAULT_POOL_SIZE = 10;
+        static private AudioSourcesPool audioSourcePool;
+
         const string GLOBALSOURCENAME = "GlobalAudioSource";
+        const string POOLNAME = "AudioSrcPool";
 
         static public AudioSource GlobalAudioSource
         {
@@ -26,7 +27,7 @@ namespace Mati36.Sound
                         globalAudioSource = existingSource.GetComponent<AudioSource>();
                     else
                     {
-                        Debug.Log((MANAGER_NAME.ToUpper() + " // " + GLOBALSOURCENAME + "...").Bold());
+                        Debug.Log((MANAGER_NAME.ToUpper() + " // Creating " + GLOBALSOURCENAME + "...").Bold());
                         globalAudioSource = new GameObject(GLOBALSOURCENAME, typeof(AudioSource)).GetComponent<AudioSource>();
                         globalAudioSource.gameObject.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
                         globalAudioSource.playOnAwake = false;
@@ -37,14 +38,25 @@ namespace Mati36.Sound
             }
         }
 
-        static public Pool<PoolableAudioSource> AudioSourcesPool
+        static public AudioSourcesPool AudioSrcPool
         {
             get
             {
                 if (audioSourcePool == null)
                 {
-                    Debug.Log((MANAGER_NAME.ToUpper() + " // CreatingPool...").Bold());
-                    audioSourcePool = new Pool<PoolableAudioSource>(DEFAULT_POOL_SIZE, CreatePoolableSource, (source) => source.gameObject.SetActive(true), (source) => source.gameObject.SetActive(false));
+                    var existingPool = GameObject.Find(POOLNAME);
+                    if (existingPool != null)
+                    {
+                        audioSourcePool = existingPool.GetComponent<AudioSourcesPool>();
+                        audioSourcePool.Initialize();
+                    }
+                    else
+                    {
+                        Debug.Log((MANAGER_NAME.ToUpper() + " // CreatingPool...").Bold());
+                        audioSourcePool = new GameObject(POOLNAME, typeof(AudioSourcesPool)).GetComponent<AudioSourcesPool>();
+                        audioSourcePool.gameObject.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
+                        audioSourcePool.Initialize();
+                    }
                 }
                 return audioSourcePool;
             }
@@ -55,29 +67,13 @@ namespace Mati36.Sound
         static public void InitializeSources()
         {
             if (GlobalAudioSource == null) { Debug.Log("Can't create GlobalAudioSource"); return; }
-            if (AudioSourcesPool == null) { Debug.Log("Can't create AudioSourcesPool"); return; }
+            if (AudioSrcPool == null) { Debug.Log("Can't create AudioSourcesPool"); return; }
         }
-
-        static private PoolableAudioSource CreatePoolableSource()
-        {
-            PoolableAudioSource source = new GameObject("PooledAudioSource", typeof(PoolableAudioSource)).GetComponent<PoolableAudioSource>();
-            source.gameObject.hideFlags = HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
-            source.Initialize();
-            source.e_OnEndSound += ReturnSourceToPool;
-            return source;
-        }
-
-        //POOL
-        private static void ReturnSourceToPool(PoolableAudioSource source)
-        {
-            AudioSourcesPool.Return(source);
-        }
-
 
         //PLAYBACK
         static public PoolableAudioSource PlaySound(SoundAsset sound)
         {
-            var source = AudioSourcesPool.Get();
+            var source = AudioSrcPool.GetSource();
             source.PlayAudio(sound.clip, SoundMode.Mode2D, sound.vol, sound.Pitch, sound.loop);
             return source;
         }
@@ -89,7 +85,7 @@ namespace Mati36.Sound
 
         static public PoolableAudioSource PlaySoundAt(SoundAsset sound, Vector3 position)
         {
-            var source = AudioSourcesPool.Get();
+            var source = AudioSrcPool.GetSource();
             source.transform.position = position;
             source.PlayAudio(sound.clip, SoundMode.Mode3D, sound.vol, sound.Pitch, sound.loop);
             return source;
@@ -97,12 +93,22 @@ namespace Mati36.Sound
 
         static public PoolableAudioSource PlaySoundAt(SoundAsset sound, Vector3 position, float overridePitch)
         {
-            var source = AudioSourcesPool.Get();
+            var source = AudioSrcPool.GetSource();
             source.transform.position = position;
             source.PlayAudio(sound.clip, SoundMode.Mode3D, sound.vol, overridePitch, sound.loop);
             return source;
         }
 
+
+        static public PoolableAudioSource CrossfadeTo(this PoolableAudioSource from, SoundAsset sound, float crossfadeLength)
+        {
+            from.FadeOut(crossfadeLength);
+            var to = PlaySound(sound);
+            to.FadeIn(crossfadeLength);
+            return to;
+        }
+
+        //SPEED
         static public void ModifySpeed(float speed)
         {
             if (speed == 0)
@@ -113,16 +119,18 @@ namespace Mati36.Sound
                 GlobalAudioSource.pitch = speed;
             }
 
-            foreach(var source in AudioSourcesPool)
-            {
-                if (speed == 0)
-                    source.PauseSource();
-                else
+            AudioSrcPool.ApplyToActiveSources(
+                (src) =>
                 {
-                    source.UnpauseSource();
-                    source.ModifyPitch(speed);
+                    if (speed == 0)
+                        src.PauseSource();
+                    else
+                    {
+                        src.UnpauseSource();
+                        src.ModifyPitch(speed);
+                    }
                 }
-            }
+                );
         }
     }
 }

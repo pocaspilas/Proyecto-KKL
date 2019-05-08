@@ -1,4 +1,6 @@
-﻿using Mati36.Sound;
+﻿using Mati36.SceneManagement;
+using Mati36.Sound;
+using Mati36.VR;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,46 +31,59 @@ public class EndAnimation : MonoBehaviour
 
     private IEnumerator EndRoutine()
     {
-        PlayerController.instance.ShowPanel("¡Es tiempo de plantar arboles!");
-        yield return new WaitForSeconds(3);
-        PlayerController.instance.HidePanel();
+        VRGaze.currentVRCamera.DisableReticle();
+        int items = PlayerController.instance.itemsCollected;
 
-        yield return new WaitForSeconds(1);
-        PlayerController.instance.ShowPushke();
-        yield return new WaitForSeconds(1f);
-        PlayerController.instance.SetPushkeSpeed(1f / (timeBetweenCoins / 0.5f));
-
-        for (int i = 0; i < PlayerController.instance.itemsCollected; i++)
+        if (items > 0)
         {
-            if (coinSound)
+            PlayerController.instance.ShowPanel("¡Es tiempo de plantar arboles!");
+            yield return new WaitForSeconds(3);
+            PlayerController.instance.HidePanel();
+
+            yield return new WaitForSeconds(1);
+            PlayerController.instance.ShowPushke();
+            yield return new WaitForSeconds(1f);
+            PlayerController.instance.SetPushkeSpeed(1f / (timeBetweenCoins / 0.5f));
+
+
+            for (int i = 0; i < items; i++)
             {
-                float pitch = (((float)i) / PlayerController.instance.itemsCollected) / 2f + 0.5f;
-                SoundManager.PlaySoundAt(coinSound, PlayerController.instance.pushke.transform.position, pitch);
+                if (coinSound)
+                {
+                    float pitch = (((float)i) / items) / 2f + 0.5f;
+                    SoundManager.PlaySoundAt(coinSound, PlayerController.instance.pushke.transform.position, pitch);
+                }
+                var obj = Instantiate(coinPrefab);
+                StartCoroutine(PlantAnimation(obj));
+                if (i < items - 1)
+                    yield return new WaitForSeconds(timeBetweenCoins);
             }
-            var obj = Instantiate(coinPrefab);
-            StartCoroutine(PlantAnimation(obj));
-            if (i < PlayerController.instance.itemsCollected - 1)
-                yield return new WaitForSeconds(timeBetweenCoins);
+            PlayerController.instance.SetPushkeSpeed(1f);
+            PlayerController.instance.HidePushke();
         }
-        PlayerController.instance.SetPushkeSpeed(1f);
-        PlayerController.instance.HidePushke();
 
         yield return new WaitForSeconds(3f);
-        PlayerController.instance.ShowPanel("¡Gracias por ayudarnos a plantar " + PlayerController.instance.itemsCollected + " arboles!");
+        if (items == 0)
+            PlayerController.instance.ShowPanel("¡Gracias por participar de la experiencia!");
+        else if (items == 1)
+            PlayerController.instance.ShowPanel("¡Gracias por ayudarnos a plantar un arbol!");
+        else
+            PlayerController.instance.ShowPanel("¡Gracias por ayudarnos a plantar " + (items) + " arboles!");
+
         yield return new WaitForSeconds(3f);
         PlayerController.instance.HidePanel();
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
 
-        
-        
-        GlobalManager.instance.ChangeScene("MenuScene");
+        PlayerController.instance.StopMusic();
+        SceneManagementHelper.ChangeScene_Static("MenuScene");
+
     }
 
     IEnumerator PlantAnimation(GameObject obj)
     {
         float time = 0;
         Vector3 initialScale = new Vector3(1, 1, 1);
-        obj.transform.Rotate(new Vector3(Random.Range(0, 180), Random.Range(0, 180), Random.Range(0, 180)));
+        //obj.transform.Rotate(new Vector3(Random.Range(0, 180), Random.Range(0, 180), Random.Range(0, 180)));
         while (time < 1)
         {
             obj.transform.position = BezierUtility.SimpleBezier(PlayerController.PushkePosition, target.transform.position, time, 5f);

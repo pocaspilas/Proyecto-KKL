@@ -48,7 +48,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 21
+  m_StaticEditorFlags: 4
   m_IsActive: 1
 --- !u!4 &8410857016840503594
 Transform:
@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8410857016840503595}
   m_LocalRotation: {x: -0.043014884, y: 0.41651863, z: 0.014160421, w: 0.9079986}
-  m_LocalPosition: {x: -0.48, y: 0.11, z: 2.05}
+  m_LocalPosition: {x: -0.48, y: -0.29, z: 2.05}
   m_LocalScale: {x: 0.15, y: 0.15020005, z: 0.15020007}
   m_Children: []
   m_Father: {fileID: 8410857015688796295}
@@ -177,10 +177,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2.856439
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: b5842bfb2319e554d941f7a6c8d6e4db, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 73c3821ad0b7cfc498c631bda0e378ce, type: 2}
     - target: {fileID: 13700000, guid: b5842bfb2319e554d941f7a6c8d6e4db, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -188,7 +184,11 @@ PrefabInstance:
     - target: {fileID: 13700000, guid: b5842bfb2319e554d941f7a6c8d6e4db, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: 0fbd3f5efc799904e823423c2a590463, type: 2}
+      objectReference: {fileID: 2100000, guid: adcaa6246225bb7469e51c0a0a6af0de, type: 2}
+    - target: {fileID: 9500000, guid: b5842bfb2319e554d941f7a6c8d6e4db, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 73c3821ad0b7cfc498c631bda0e378ce, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5842bfb2319e554d941f7a6c8d6e4db, type: 3}
 --- !u!4 &8410857016176112931 stripped

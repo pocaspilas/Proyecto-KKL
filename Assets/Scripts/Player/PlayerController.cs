@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
 
     public void Init()
     {
+        UnityEngine.XR.InputTracking.Recenter();
         pushke.Play("Pushke_Disappear", 0, 1f);
         transform.position = GetWaypoint(initialWaypoint);
         currentWaypoint = initialWaypoint;
@@ -75,22 +76,37 @@ public class PlayerController : MonoBehaviour
 
         StartMusic();
 
-        ShowPanel("Bienvenidos al Bosque KKL");
-        Utility.ExecuteAfterSeconds(4, delegate { HidePanel(); });
+        VRGaze.currentVRCamera.EnableReticle();
+
+        //ShowPanel("Bienvenidos al Bosque KKL");
+        //Utility.ExecuteAfterSeconds(4, delegate { HidePanel(); });
     }
 
     public void StartMusic()
     {
         if (bgMusic != null)
+        {
             currentMusic1 = SoundManager.PlaySound(bgMusic);
+            currentMusic1.FadeIn(1);
+        }
         if (bgMusic2 != null)
+        {
             currentMusic2 = SoundManager.PlaySound(bgMusic2);
+            currentMusic2.FadeIn(1);
+        }
     }
 
     public void StopMusic()
     {
-        currentMusic1?.StopSource();
-        currentMusic2?.StopSource();
+        currentMusic1?.FadeOut(1);
+        currentMusic1 = null;
+        currentMusic2?.FadeOut(1);
+        currentMusic2 = null;
+    }
+
+    private void OnDestroy()
+    {
+        StopMusic();
     }
 
     Vector3 GetWaypoint(int index)
