@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mati36.Utility;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,14 +26,18 @@ namespace Mati36.SceneManagement
 
         private IEnumerator AsyncLoadRoutine(string sceneName)
         {
+            bool finishedLoading = false;
+
             var asyncOp = SceneManager.LoadSceneAsync(sceneName);
             asyncOp.allowSceneActivation = false;
             while(!asyncOp.isDone)
             {
                 Debug.Log("Async Progress = " + (asyncOp.progress * 100) + "%");
-                if(asyncOp.progress >= 0.9f)
+                if(!finishedLoading && asyncOp.progress >= 0.9f)
                 {
-                    asyncOp.allowSceneActivation = true;
+                    finishedLoading = true;
+                    FadeUtility.FadeToBlack(1, () => asyncOp.allowSceneActivation = true);
+                    //asyncOp.allowSceneActivation = true;
                 }
                 yield return null;
             }

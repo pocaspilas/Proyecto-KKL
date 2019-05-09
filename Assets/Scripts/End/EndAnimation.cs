@@ -1,5 +1,6 @@
 ﻿using Mati36.SceneManagement;
 using Mati36.Sound;
+using Mati36.Utility;
 using Mati36.VR;
 using System.Collections;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ public class EndAnimation : MonoBehaviour
 
         if (items > 0)
         {
-            PlayerController.instance.ShowPanel("¡Es tiempo de plantar arboles!");
+            PlayerController.instance.ShowPanel("¡Es tiempo de <b>plantar arboles</b>!");
             yield return new WaitForSeconds(3);
             PlayerController.instance.HidePanel();
 
@@ -64,18 +65,20 @@ public class EndAnimation : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
         if (items == 0)
-            PlayerController.instance.ShowPanel("¡Gracias por participar de la experiencia!");
+            PlayerController.instance.ShowPanel("¡<b>Gracias</b> por participar de la experiencia!");
         else if (items == 1)
-            PlayerController.instance.ShowPanel("¡Gracias por ayudarnos a plantar un arbol!");
+            PlayerController.instance.ShowPanel("¡<b>Gracias</b> por ayudarnos\n a plantar <b>un arbol</b>!");
         else
-            PlayerController.instance.ShowPanel("¡Gracias por ayudarnos a plantar " + (items) + " arboles!");
+            PlayerController.instance.ShowPanel("¡<b>Gracias</b> por ayudarnos\n a plantar <b>" + (items) + " arboles</b>!");
 
         yield return new WaitForSeconds(3f);
         PlayerController.instance.HidePanel();
         yield return new WaitForSeconds(3f);
 
         PlayerController.instance.StopMusic();
-        SceneManagementHelper.ChangeScene_Static("MenuScene");
+        FadeUtility.FadeToBlack(2, () => SceneManagementHelper.ChangeScene_Static("MenuScene"));
+        
+        
 
     }
 

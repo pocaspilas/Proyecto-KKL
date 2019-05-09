@@ -479,6 +479,12 @@ PrefabInstance:
       propertyPath: m_Color.b
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114390258245625634, guid: 617f1710c31a6df4f8af1530a6fe1547,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 6dc1138820a633748bd54b73167ce767,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 617f1710c31a6df4f8af1530a6fe1547, type: 3}
 --- !u!4 &2125644037 stripped

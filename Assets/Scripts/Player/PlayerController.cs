@@ -1,4 +1,5 @@
 ﻿using Mati36.Sound;
+using Mati36.Utility;
 using Mati36.VR;
 using System.Collections;
 using System.Collections.Generic;
@@ -77,6 +78,8 @@ public class PlayerController : MonoBehaviour
         StartMusic();
 
         VRGaze.currentVRCamera.EnableReticle();
+
+        FadeUtility.FadeFromBlack(2);
 
         //ShowPanel("Bienvenidos al Bosque KKL");
         //Utility.ExecuteAfterSeconds(4, delegate { HidePanel(); });
