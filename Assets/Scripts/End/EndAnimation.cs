@@ -18,6 +18,7 @@ public class EndAnimation : MonoBehaviour
     public Transform target;
 
     public SoundAsset coinSound, treeSound;
+    public SoundAsset endMusic;
 
     [Header("Animation")]
     public float timeBetweenCoins;
@@ -35,6 +36,13 @@ public class EndAnimation : MonoBehaviour
         VRGaze.currentVRCamera.DisableReticle();
         int items = PlayerController.instance.itemsCollected;
 
+        var music = SoundManager.PlaySound(endMusic);
+        music.FadeIn(2f);
+            //PlayerController.instance.currentMusic2.CrossfadeTo(endMusic, 2f);
+
+        music.e_OnEndSound += ReturnToMenu;
+
+        yield return new WaitForSeconds(2f);
         if (items > 0)
         {
             PlayerController.instance.ShowPanel("¡Es tiempo de <b>plantar arboles</b>!");
@@ -75,11 +83,13 @@ public class EndAnimation : MonoBehaviour
         PlayerController.instance.HidePanel();
         yield return new WaitForSeconds(3f);
 
-        PlayerController.instance.StopMusic();
-        FadeUtility.FadeToBlack(2, () => SceneManagementHelper.ChangeScene_Static("MenuScene"));
-        
-        
 
+    }
+
+    void ReturnToMenu(PoolableAudioSource sourceEnded)
+    {
+        sourceEnded.e_OnEndSound -= ReturnToMenu;
+        FadeUtility.FadeToBlack(2, () => SceneManagementHelper.ChangeScene_Static("MenuScene"));
     }
 
     IEnumerator PlantAnimation(GameObject obj)

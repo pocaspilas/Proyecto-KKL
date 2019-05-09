@@ -74,10 +74,12 @@ namespace Mati36.Sound
         //
         public void FadeIn(float duration)
         {
+            if (!gameObject.activeSelf) return;
             StartCoroutine(FadeRoutine(duration, true));
         }
         public void FadeOut(float duration)
         {
+            if (!gameObject.activeSelf) return;
             StartCoroutine(FadeRoutine(duration, false));
         }
 

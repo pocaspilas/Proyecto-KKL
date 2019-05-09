@@ -447,8 +447,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.44, y: 15.57, z: 11.15}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 21.383299, y: 15.57, z: 16.610706}
+  m_Center: {x: -4.47165, y: 0, z: 2.7303524}
 --- !u!114 &134020948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +503,7 @@ MonoBehaviour:
   target: {fileID: 141402403}
   coinSound: {fileID: 11400000, guid: ccbd6d29006342e4eb4bcb8b9d2ee497, type: 2}
   treeSound: {fileID: 11400000, guid: 86ba3ab95917f7b4ea69ee491c83bcaa, type: 2}
+  endMusic: {fileID: 11400000, guid: 1940328eac40013459922dfe75a3c06d, type: 2}
   timeBetweenCoins: 0.8
   coinPlantDuration: 0.8
 --- !u!1 &141402402
@@ -1752,7 +1753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 592403441, guid: dafcd000d20fcf0489ab4b137b1fe44c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -57.18
+      value: -51.59
       objectReference: {fileID: 0}
     - target: {fileID: 592403441, guid: dafcd000d20fcf0489ab4b137b1fe44c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1760,7 +1761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 592403441, guid: dafcd000d20fcf0489ab4b137b1fe44c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 31.82
+      value: 26.89
       objectReference: {fileID: 0}
     - target: {fileID: 592403441, guid: dafcd000d20fcf0489ab4b137b1fe44c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1894,6 +1895,7 @@ Transform:
   - {fileID: 141402403}
   - {fileID: 721206434}
   - {fileID: 2131596559}
+  - {fileID: 1692739990}
   m_Father: {fileID: 540558288}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5861,6 +5863,66 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf6249782db9b545a5cccab88216396, type: 3}
+--- !u!1 &1692739989
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1692739990}
+  - component: {fileID: 1692739991}
+  - component: {fileID: 1692739992}
+  m_Layer: 11
+  m_Name: EndMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1692739990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692739989}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.8, y: -5.9, z: 10.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 607592224}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1692739991
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692739989}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 12.05, y: 10.95, z: 11.92}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1692739992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692739989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4495fafc595fdcf42b8af655c3110c9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8192
 --- !u!1 &1702045566
 GameObject:
   m_ObjectHideFlags: 0

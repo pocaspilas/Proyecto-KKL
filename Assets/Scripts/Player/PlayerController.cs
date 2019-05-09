@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     [Header("Sounds")]
     public SoundAsset bgMusic;
     public SoundAsset bgMusic2, pushkeAppear, pushkeDisappear;
-    private PoolableAudioSource currentMusic1, currentMusic2;
+    public PoolableAudioSource currentMusic1, currentMusic2;
 
     [Header("Panel")]
     public Text panelText;
