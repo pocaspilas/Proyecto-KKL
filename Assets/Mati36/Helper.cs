@@ -15,4 +15,9 @@ public class Helper : MonoBehaviour {
         yield return new WaitForSeconds(delay);
         action();
     }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+    }
 }

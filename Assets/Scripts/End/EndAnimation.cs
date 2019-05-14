@@ -71,6 +71,8 @@ public class EndAnimation : MonoBehaviour
             PlayerController.instance.HidePushke();
         }
 
+
+
         yield return new WaitForSeconds(3f);
         if (items == 0)
             PlayerController.instance.ShowPanel("¡<b>Gracias</b> por participar de la experiencia!");

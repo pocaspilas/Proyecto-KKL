@@ -102,7 +102,7 @@ public class ScriptedDeer : MonoBehaviour
             transform.position = Vector3.Lerp(eatPos.position, finalPos.position, t);
             transform.forward = (finalPos.position - transform.position).normalized.SetY(0);
             
-            currentSpeed = Mathf.Lerp(walkSpeed + 5, trotSpeed, t / 0.2f);
+            currentSpeed = Mathf.Lerp(walkSpeed + 10, trotSpeed, t / 0.2f);
             ani.speed = Mathf.Clamp01((currentSpeed / trotSpeed) + 0.2f);
             t += (currentSpeed) * Time.deltaTime / distToTarget;
             UpdateHeight();

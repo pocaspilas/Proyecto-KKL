@@ -1,6 +1,7 @@
 ﻿using Mati36.Sound;
 using Mati36.Utility;
 using Mati36.VR;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -45,6 +46,8 @@ public class PlayerController : MonoBehaviour
     public Text panelText;
     public Animator panelAni;
 
+    public Animator instructAni;
+
     private void Awake()
     {
         if (instance == null)
@@ -81,8 +84,20 @@ public class PlayerController : MonoBehaviour
 
         FadeUtility.FadeFromBlack(2);
 
+        //instructAni.Play("Panel_Appear", 0, 0f);
+        instructAni.Play("Panel_Disappear", 0, 1f);
+        StartCoroutine(ExecuteInSec(2, () => instructAni.Play("Panel_Appear", 0, 0f)));
+        StartCoroutine(ExecuteInSec(8, () => instructAni.Play("Panel_Disappear", 0, 0f)));
+        //Utility.ExecuteAfterSeconds(2, () => instructAni.Play("Panel_Appear", 0, 0f));
+        //Utility.ExecuteAfterSeconds(8, () => instructAni.Play("Panel_Disappear", 0, 0f));
         //ShowPanel("Bienvenidos al Bosque KKL");
         //Utility.ExecuteAfterSeconds(4, delegate { HidePanel(); });
+    }
+
+    IEnumerator ExecuteInSec(float sec, Action action)
+    {
+        yield return new WaitForSeconds(sec);
+        action();
     }
 
     public void StartMusic()
@@ -126,13 +141,22 @@ public class PlayerController : MonoBehaviour
         isMoving = true;
     }
 
+    float escapePressedTime;
+
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
             ToggleMove();
 
         if (Input.GetKeyDown(KeyCode.Escape))
+            escapePressedTime = Time.time;
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if(escapePressedTime + 1f < Time.time )
+                SceneManager.LoadScene("MenuScene", LoadSceneMode.Single);
+            else
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex, LoadSceneMode.Single);
+        }
 
         if (VRGaze.currentVRCamera.IsGazingSomething)
             timeGazing += Time.deltaTime / gazeSlowTime;

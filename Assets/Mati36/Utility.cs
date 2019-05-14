@@ -14,7 +14,7 @@ static public class Utility
             if (helper == null)
             {
                 helper = new GameObject("Helper", typeof(Helper)).GetComponent<Helper>();
-                helper.gameObject.hideFlags = HideFlags.HideAndDontSave;
+                helper.gameObject.hideFlags = HideFlags.NotEditable | HideFlags.DontSaveInBuild | HideFlags.DontSaveInEditor;
             }
             return helper;
         }
